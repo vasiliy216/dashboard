@@ -1,0 +1,70 @@
+.stats-small {
+    display: flex;
+    width: 100%;
+
+    .container {
+        width: 100%;
+        height: 140px;
+        display: flex;
+    }
+
+    .card-body {
+        text-align: center;
+        margin: auto;
+    
+        .stats-title {
+            text-transform: uppercase;
+            color: #818ea3;
+            font-size: 12px;
+            letter-spacing: 1px;
+        }
+    
+        .stats-value {
+            font-size: 33px;
+            line-height: 24px;
+            color: #3d5170;
+            margin: 16px 0;
+            font-weight: 500;
+        }
+    
+        .stats-percentage {
+            position: relative;
+            font-size: 12px;
+        }
+    }
+    
+}
+
+.increase,
+.decrease {
+    &::before {
+        display: inline-block;
+        content: "";
+        width: 0;
+        height: 0;
+        margin-right: 3.3px;
+        vertical-align: 3.3px;
+    }
+}
+
+.increase {
+    color: #17c671;
+
+    &:before {
+        border-top: 0;
+        border-right: 4px solid transparent;
+        border-bottom: 4px solid #17c671;
+        border-left: 4px solid transparent;
+    }
+}
+
+.decrease {
+    color: #c4183c;
+
+    &::before {
+        border-top: 4px solid #c4183c;
+        border-right: 4px solid transparent;
+        border-bottom: 0;
+        border-left: 4px solid transparent;
+    }
+}

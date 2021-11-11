@@ -1,0 +1,14 @@
+.device-footer-href {
+    margin: auto 0;
+
+    .device-footer-button {
+        color: #3d5170;
+        font-size: 12px;
+        line-height: 18px;
+        font-weight: 500;
+
+        &:hover {
+            color: #007bff;
+        }
+    }
+}

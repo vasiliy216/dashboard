@@ -1,0 +1,87 @@
+.stats-users {
+    flex: 0 0 66.66667%;
+    max-width: 66.66667%;
+
+    .stats-users-body {
+
+
+        .stats-body-top {
+            background-color: #fbfbfb;
+            display: flex;
+            border-bottom: 1px solid #e1e5eb;
+            justify-content: space-between;
+
+            padding: 8px 15px;
+
+            .stats-date {
+                display: flex;
+
+                .stats-date-input {
+                    border-radius: 0;
+                    border: 1px solid #e1e5eb;
+                    padding-top: 6px;
+                    padding-bottom: 6px;
+
+                    input {
+                        font-size: 11px;
+                        text-align: center;
+                    }
+
+                    &:hover {
+                        border-color: #b3bdcc;
+                    }
+                    
+                    &:nth-child(1) {
+                        border-radius: 4px 0 0 4px;
+                    }
+                }
+
+                .stats-date-icon {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    
+                    width: 35px;
+
+                    background-color: #fff;
+                    border: 1px solid #e1e5eb;
+                    border-radius: 0 4px 4px 0;
+
+                    i {
+                        font-size: 13px;
+                        color: #abb6bf;
+                    }
+                }
+            }
+
+            .stats-full-report {
+
+
+                .full-report-button {
+                    cursor: pointer;
+                    font-size: 11px;
+                    font-weight: 400;
+                    line-height: 17px;
+                    text-align: center;
+                    padding: 7px 14px;
+                    border-radius: 4px;
+                    border: 1px solid #e1e5eb;
+                    color: #3d5170;
+                    background: #fff;
+                    transition: all 250ms cubic-bezier(.27,.01,.38,1.06);
+
+                    &:hover {
+                        box-shadow: 0 0.125rem 0.625rem rgba(129, 142, 163, .20), 0 0.0625rem 0.125rem rgba(129, 142, 163, .30);
+                    }
+
+                    &:active {
+                        box-shadow: none;
+                        background-color: #007bff;
+                        border-color: #007bff;
+                        color: #fff;
+                    }
+                }
+            }
+        }
+    }
+}

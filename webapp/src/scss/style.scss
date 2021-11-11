@@ -1,0 +1,107 @@
+@import "libs";
+@import "vars";
+@import '~antd/dist/antd.css';
+
+* {
+    outline: none;
+}
+
+ul,
+li {
+    display: block;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    color: black;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+p {
+    margin: 0;
+}
+
+body {
+    background: #f5f6f8;
+    font-weight: 500;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.card-mrg-all {
+    background-color: #fff;
+    box-shadow: 0 2px 0 rgba(90, 97, 105, .11), 0 4px 8px rgba(90, 97, 105, .12), 0 10px 10px rgba(90, 97, 105, .06), 0 7px 70px rgba(90, 97, 105, .10);
+    border-radius: .625rem;
+
+    display: flex;
+    flex-flow: column;
+}
+
+.card-p {
+    padding-left: 15px;
+    padding-right: 15px;
+
+    margin-bottom: 24px;
+}
+
+.card-p-16 {
+    padding: 16px;
+}
+
+.card-brdr-4 {
+    border-radius: 4px;
+}
+
+.form-group {
+    margin-bottom: 16px;
+}
+
+.form-control {
+    height: auto;
+    padding: 7px 12px;
+    font-size: 13px;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    font-weight: 300;
+    will-change: border-color,box-shadow;
+    border-radius: 4px;
+    box-shadow: none;
+}
+
+.mb-0 {
+    margin-bottom: 0 !important;
+}
+
+.h-100 {
+    height: 100%;
+}
+
+.text-danger {
+    color: #c4183c !important;
+
+    i {
+        color: #c4183c !important;
+    }
+}
+
+.text-success {
+    color: #17c671 !important;
+}
+
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.text-white {
+    color: #818ea3;
+}
+
+#root {
+    display: flex;
+}
+
+@import "media";

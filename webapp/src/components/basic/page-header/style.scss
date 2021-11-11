@@ -1,0 +1,26 @@
+.page-header {
+    padding: 24px 0;
+    width: 100%;
+
+    &-title {
+        text-align: left;
+
+        .page-subtitle {
+            font-size: 10px;
+            text-transform: uppercase;
+            color: #818ea3;
+            line-height: 1.5;
+            font-weight: 500;
+            letter-spacing: 2px;
+        }
+
+        .page-title {
+            font-size: 26px;
+            color: #3d5170;
+            font-weight: 500;
+            line-height: 1;
+
+            margin: 0;
+        }
+    }
+}

@@ -1,0 +1,16 @@
+.footer-nav-item {
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 21px;
+    display: flex;
+
+    a {
+        padding: 10px;
+        transition: all 250ms cubic-bezier(.27,.01,.38,1.06);
+        color: #007bff;
+
+        &:hover {
+            color: #0056b3;
+        }
+    }
+}

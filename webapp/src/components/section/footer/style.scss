@@ -1,0 +1,31 @@
+.main-footer {
+    height: 60px;
+    padding: 8px 16px;
+
+    border-top: 1px solid #e1e5eb;
+    background-color: #fff;
+
+    display: flex;
+    justify-content: space-between;
+
+    .footer-nav {
+        display: flex;
+    }
+
+    .copyright {
+        color: #818ea3;
+        font-size: 15px;
+        font-weight: 500;
+        margin: auto 8px auto auto;
+
+        a {
+            color: #007bff;
+            transition: none;
+
+            &:hover {
+                color: #0056b3;
+                text-decoration: underline;
+            }
+        }
+    }
+}

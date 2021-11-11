@@ -1,0 +1,31 @@
+.new-draft {
+    flex: 0 0 33.333333%;
+    max-width: 33.333333%;
+
+    .new-draft-body {
+        display: flex;
+        flex-flow: column;
+        flex: 1 1 auto;
+
+        .quick-post-form {
+            display: flex;
+            flex-flow: column;
+            flex: 1;
+
+            .form-group:nth-of-type(2) {
+                display: flex;
+                flex: 1;
+            }
+            
+            .new-draft-input {
+
+
+            }
+    
+            .new-draft-textarea {
+                height: auto !important;
+    
+            }
+        }
+    }
+}

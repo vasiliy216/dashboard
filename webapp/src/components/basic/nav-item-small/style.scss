@@ -1,0 +1,62 @@
+.dropdown-nav-item__right {
+    min-width: 150px;
+    cursor: pointer;
+    display: flex;
+
+    .dropdown-toggle {
+        display: flex;
+        align-items: center;
+
+        margin: auto 16px;
+
+        .user-avatar {
+            width: 40px;
+            height: 40px;
+
+            margin-right: 9px;
+
+            border-radius: 50px;
+        }
+        .user-name {
+            color: #00000080;
+            white-space: nowrap;
+
+            font-size: 13px;
+
+            &:after  {
+                display: inline-block;
+                content: "";
+                width: 0;
+                height: 0;
+                margin-left: 3.3px;
+                vertical-align: 3.3px;
+                border-top: 3.5px solid;
+                border-right: 3.5px solid transparent;
+                border-bottom: 0;
+                border-left: 3.5px solid transparent;
+            }
+        }
+    }
+}
+
+.dropdown-user-menu {
+    font-size: 13px;
+    font-weight: 300;
+    line-height: 19px;
+    color: #212529;
+
+    i {
+        color: #c3c7cc;
+        font-size: 10px;
+        margin-right: 10px;
+    }
+
+    span {
+
+    }
+}
+
+.ant-dropdown-menu {
+    margin-top: -4px !important;
+    border-radius: 0 0 6px 6px !important;
+}
