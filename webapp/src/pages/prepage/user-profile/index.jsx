@@ -1,4 +1,5 @@
 import { PageHeader } from '../../../components/basic'
+import { Footer } from '../../../components/section'
 
 import './style.scss'
 

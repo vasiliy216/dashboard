@@ -1,5 +1,4 @@
 import { PageHeader } from '../../../components/basic'
-import { Footer } from '../../../components/section'
 import {
     StatisticsCommon,
     StatsUsers,
@@ -18,13 +17,14 @@ const BlogDashboard = () => {
     return (
         <>
             <PageHeader subtitle="DASHBOARD" title="Blog Overview" />
-            <StatisticsCommon />
-            <StatsUsers />
-            <StatsUsersByDevice />
-            <NewDraft />
-            <Discussions />
-            <TopReferrals />
-            <Footer />
+            <div className="row">
+                <StatisticsCommon />
+                <StatsUsers />
+                <StatsUsersByDevice />
+                <NewDraft />
+                <Discussions />
+                <TopReferrals />
+            </div>
         </>
     )
 }

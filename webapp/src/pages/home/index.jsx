@@ -1,4 +1,4 @@
-import { Header, Menu, Body } from '../../components/section'
+import { Header, Menu, Body, Footer } from '../../components/section'
 import './style.scss'
 
 const Home = () => {
@@ -9,6 +9,7 @@ const Home = () => {
             <div className="main-content">
                 <Header />
                 <Body />
+                <Footer />
             </div>
         </>
     )

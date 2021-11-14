@@ -8,7 +8,7 @@ const PageHeader = props => {
     } = props;
 
     return (
-        <div className="page-header card-p">
+        <div className="page-header">
             <div className="page-header-title">
                 <span className="page-subtitle">{ subtitle }</span>
                 <h3 className="page-title">{ title }</h3>
