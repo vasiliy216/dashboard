@@ -1,0 +1,25 @@
+.user-tasks {
+
+
+    &-body {
+        flex: 1 1 auto;
+        padding: 16px;
+    }
+
+    &-wrapper {
+        flex: 0 0 25%;
+        max-width: 25%;
+        text-align: center;
+
+        h4 {
+            font-weight: 600;
+            font-size: 25px;
+            font-weight: 600;
+            line-height: 32px;
+        }
+
+        span {
+            font-size: 11px;
+        }
+    }
+}

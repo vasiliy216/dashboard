@@ -1,0 +1,11 @@
+.send-message {
+
+    &-body {
+        padding: 16px;
+    }
+
+    &-textarea {
+        min-height: 150px !important;
+        margin-bottom: 16px !important;
+    }
+}

@@ -24,7 +24,7 @@ const Menu = () => {
         icon: 'fas fa-table'
     }, {
         link: 'user-profile',
-        navName: 'User Profile',
+        navName: 'User Account',
         icon: 'fas fa-user'
     }]
 

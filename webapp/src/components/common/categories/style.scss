@@ -1,0 +1,16 @@
+.categories {
+
+    &-body {
+        display: flex;
+        flex-flow: column;
+    }
+}
+
+.checkbox-fix {
+    margin-left: 0 !important;
+    font-weight: 400;
+    
+    & + .checkbox-fix {
+        margin-top: 8px !important;
+    }
+}

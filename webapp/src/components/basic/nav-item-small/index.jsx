@@ -18,13 +18,18 @@ const NavItemSmall = props => {
                 </Link>
             </Menu.Item>
             <Menu.Item key="1">
+                <Link to="user-profile/edit" className="dropdown-user-menu">
+                    <i className="fas fa-cog"></i>
+                    <span>Edit User Profile</span>
+                </Link>
+            </Menu.Item>
+            <Menu.Item key="2">
                 <Link to="blog-post" className="dropdown-user-menu">
                     <i className="fas fa-th-large"></i>
                     <span>Blog Posts</span>
                 </Link>
-
             </Menu.Item>
-            <Menu.Item key="2">
+            <Menu.Item key="3">
                 <Link to="add-new-post" className="dropdown-user-menu">
                     <i className="fas fa-folder-plus"></i>
                     <span>Add New Post</span>

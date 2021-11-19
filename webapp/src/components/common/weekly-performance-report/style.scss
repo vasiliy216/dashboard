@@ -1,0 +1,12 @@
+.weekly-performance-report {
+
+    &__body {
+        padding: 16px;
+
+        canvas {
+            display: block;
+            height: 236px;
+            width: 546px;
+        }
+    }
+}

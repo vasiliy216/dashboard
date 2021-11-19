@@ -4,6 +4,8 @@ import './style.scss'
 
 const NavItem = props => {
 
+    console.log(window.location.pathname.slice(1) === "user-profile/edit")
+
     const {
         link,
         navName,
@@ -15,6 +17,7 @@ const NavItem = props => {
             <Link to={link} className={classNames({
                 'nav nav-item-wrapper': true,
                 'active': link === window.location.pathname.slice(1) ||
+                    window.location.pathname.slice(1) === (link + "/edit") ||
                     (link === "blog-dashboard" && window.location.pathname === "/")
             })}>
                 <i className={icon}></i>

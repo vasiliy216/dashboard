@@ -1,0 +1,45 @@
+.actions {
+
+    &-body {
+        border-bottom: 1px solid #e1e5eb;
+
+        &-item + .actions-body-item {
+            margin-top: 8px;
+        }
+
+        &-item {
+            display: flex;
+            align-items: center;
+            font-weight: 100;
+            font-size: 15px;
+
+            .text-success {
+                font-weight: 500;
+            }
+
+            i {
+                font-size: 13px;
+            }
+
+            strong {
+                font-weight: 500;
+                margin-left: 5px;
+            }
+
+            p {
+                margin-left: 5px;
+            }
+
+            a {
+                color: #007bff;
+                margin-left: auto;
+            }
+        }
+    }
+
+    &-footer {
+        display: flex;
+        justify-content: space-between;
+        padding: 13px 16px;
+    }
+}

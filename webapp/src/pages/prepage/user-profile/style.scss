@@ -1,0 +1,17 @@
+.user-profile-left {
+    flex: 0 0 33.333333%;
+    max-width: 33.333333%;
+
+    >div + div {
+        margin-top: 16px;
+    }
+}
+
+.user-profile-right {
+    flex: 0 0 66.666667%;
+    max-width: 66.666667%;
+    
+    >div + div {
+        margin-top: 16px;
+    }
+}

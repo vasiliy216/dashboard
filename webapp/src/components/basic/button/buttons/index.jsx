@@ -5,7 +5,7 @@ import './style.scss'
 const Buttons = props => {
     
     const {
-        normalOuline,
+        outline,
         small,
         smallOutline,
         primary,
@@ -16,7 +16,7 @@ const Buttons = props => {
         <button className={classNames({
             'btn': true,
             'btn-sm': small || smallOutline,
-            'btn-outline': normalOuline || smallOutline,
+            'btn-outline': outline || smallOutline,
             'btn-primary': primary,
             'btn-white': white
         })}>{props.children}</button>

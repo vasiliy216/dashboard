@@ -1,0 +1,47 @@
+.status-users {
+    flex-basis: 0;
+    flex-grow: 1;
+    max-width: 100%;
+
+    .status-users-body {
+        padding-bottom: 16px;
+    }
+
+    .status-users__table {
+        width: 100%;
+    }
+
+    .status-users__head {
+        background-color: #fbfbfb;
+    }
+
+    th {
+        padding: 12px;       
+    }
+
+    .status-users__body {
+
+
+        tr {
+            border-top: 1px solid #dee2e6;
+        }
+    }
+}
+
+.bg-dark {
+
+    tr,
+    .stats-panel-header {
+        border-color: #32383e !important;
+    }
+
+    h6 {
+        color: #fff !important;
+    }
+
+    thead,
+    tbody {
+        background-color: #212529 !important;
+        color: #fff !important;
+    }
+}
