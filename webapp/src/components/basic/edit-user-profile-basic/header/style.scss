@@ -1,0 +1,60 @@
+.edit-user-profile__header {
+    overflow: hidden;
+
+    .edit-user-details__img {
+        position: relative;
+        width: 100%;
+        max-height: 115px;
+
+        &:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(90,97,105,.5);
+            will-change: background-color;
+            transition: background-color 250ms ease-in-out;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        .edit-user-details__change-background {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            z-index: 2;
+            opacity: 1;
+            transform: translate(-50%,-50%);
+            background-color: rgba(255,255,255,.06);
+            border: 1px dashed rgba(233,236,239,.3);
+            padding: 7px 15px;
+            color: #fff;
+            border-radius: 6px;
+            font-size: 12px;
+            will-change: opacity;
+            transition: opacity 250ms ease-in-out,-webkit-transform 250ms ease-in-out;
+            transition: opacity 250ms ease-in-out,transform 250ms ease-in-out;
+            transition: opacity 250ms ease-in-out,transform 250ms ease-in-out,-webkit-transform 250ms ease-in-out;
+
+            &:hover {
+                cursor: pointer;
+                transform: translate(-50%,-50%) scale(1.05);
+            }
+
+            i {
+                margin-right: 4px;
+                font-size: 15px;
+                line-height: 15px;
+                top: 2px;
+            }
+
+            input {
+                display: none;
+            }
+        }
+    }
+}
