@@ -13,10 +13,6 @@
         font-weight: 300;
     }
 
-    .t-active {
-        color: #06c;
-    }
-
     .toolbar-controller {
         border: 1px solid #e1e5eb;
         border-radius: 4px 4px 0 0;
@@ -69,11 +65,25 @@
     }
 
     .add-new-post__editor {
-        min-height: 400px;
-        height: 100%;
-        border: 1px solid #e1e5eb; 
-        border-radius: 0 0 4px 4px;
         position: relative;
+
+        .ql-toolbar.ql-snow {
+            border-color: #e1e5eb;
+
+            border-top-left-radius: 4px;
+            border-top-right-radius: 4px;
+            color: #3d5170!important;
+        }
+
+        .ql-container.ql-snow {
+            border-color: #e1e5eb;
+
+            min-height: 400px;
+            height: 100%;
+
+            border-bottom-left-radius: 4px;
+            border-bottom-right-radius: 4px;
+        }
 
         .t-blank {
 
@@ -106,35 +116,16 @@
     }
 }
 
-.toolbar-select-option {
-    font-size: 13px !important;
-    height: 100% !important;
-    padding-top: 5px;
-    padding-left: 5px;
+.ql-toolbar {
+    border-top-left-radius: .25rem;
+    border-top-right-radius: .25rem;
+    color: #3d5170!important;
 
-    &:nth-of-type(1) {
-        font-size: 26px !important;
-        line-height: 34px !important;
+    .ql-stroke{
+        stroke: #818ea3;
     }
 
-    &:nth-of-type(2) {
-        font-size: 21px !important;
-        line-height: 27px !important;
-
-    }
-
-    &:nth-of-type(3) {
-        font-size: 16px !important;
-        line-height: 24px !important;
-    }
-
-    &:nth-of-type(4) {
-        font-size: 14px !important;
-        line-height: 22px !important;
-    }
-
-    &:nth-of-type(5) {
-        font-size: 11px !important;
-        line-height: 19px !important;
+    .ql-fill {
+        fill: #818ea3;
     }
 }
