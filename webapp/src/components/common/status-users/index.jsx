@@ -7,7 +7,7 @@ const StatusUsers = props => {
     
     const {
         styleDark,
-        title
+        // title
     } = props
 
     return (

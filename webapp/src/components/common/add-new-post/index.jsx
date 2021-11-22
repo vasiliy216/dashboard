@@ -4,12 +4,16 @@ import './style.scss'
 
 const AddNewPostCommon = () => {
 
+    const handleDiv = e => {
+        console.log(e)
+    }
+
     const { Option } = Select;
 
     return (
         <div className="add-new-post card-p">
             <div className="card-mrg-all card-p-16">
-                <Input placeholder="Your Post Title" className="add-new-post__input"/>
+                <Input placeholder="Your Post Title" className="add-new-post__input" />
                 <div className="toolbar-controller">
                     <span className="toolbar-formats">
                         <Select defaultValue="Normal" className="toolbar-select" dropdownClassName={"toolbar-select-dropdown"} dropdownMatchSelectWidth={false}>
@@ -49,7 +53,13 @@ const AddNewPostCommon = () => {
                     </span>
                 </div>
                 <div id="editor-container" className="add-new-post__editor">
-                    <div className="t-editor t-blank" contentEditable="true" data-placeholder="Words can be like x-rays if you use them properly..."></div>
+                    <div
+                        onChange={e => handleDiv(e)}
+                        className="t-editor"
+                        contentEditable="true"
+                        data-gramm="false"
+                        data-placeholder="Words can be like x-rays if you use them properly..."
+                    ></div>
                 </div>
             </div>
         </div>

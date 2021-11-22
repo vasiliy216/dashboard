@@ -1,14 +1,15 @@
+import { Link } from 'react-router-dom'
 import './style.scss'
 
 const FooterNavItem = props => {
     
     const {
-        link,
+        // link,
         item
     } = props;
 
     return (
-        <li className="footer-nav-item"><a href="#">{ item }</a></li>
+        <li className="footer-nav-item"><Link to="">{ item }</Link></li>
     )
 }
 

@@ -1,12 +1,18 @@
 import { Form, Input, Checkbox } from 'antd'
 import { Buttons } from '../../../components/basic'
 import { Link } from 'react-router-dom'
+import { ValidateField } from '../../../utils/helpers'
 import '../../style.scss'
 
 const LoginForm = props => {
 
     const {
-        handleSubmit
+        values,
+        touched,
+        errors,
+        handleChange,
+        handleSubmit,
+        handleBlur,
     } = props
 
     return (
@@ -16,27 +22,46 @@ const LoginForm = props => {
                     <i className="fas fa-clipboard-list logo"></i>
                     <h5 className="auth-form-title">Create New Account</h5>
                     <Form onSubmit={handleSubmit}>
-                        <Form.Item className="auth-item">
-                            <label htmlFor="inputEmailAddress">Email address</label>
+                        <Form.Item
+                            validateStatus={ValidateField("email", touched, errors)}
+                            className="auth-item"
+                        >
+                            <label htmlFor="email">Email address</label>
                             <Input
-                                id="inputEmailAddress"
+                                id="email"
+                                name="email"
                                 className="form-control"
                                 placeholder="Enter email"
+                                value={values.email}
+                                onBlur={handleBlur}
+                                onChange={handleChange}
+                                required
                             />
+                            {touched.email && errors.email && <p className="invalid-feedback">{errors.email}</p>}
                         </Form.Item>
-                        <Form.Item className="auth-item">
-                            <label htmlFor="inputPassword">Password</label>
+                        <Form.Item
+                            validateStatus={ValidateField("password", touched, errors)}
+                            className="auth-item"
+                        >
+                            <label htmlFor="password">Password</label>
                             <Input
-                                id="inputPassword"
+                                id="password"
+                                name="password"
+                                type="password"
                                 className="form-control"
                                 placeholder="Password"
+                                value={values.password}
+                                onBlur={handleBlur}
+                                onChange={handleChange}
+                                required
                             />
+                            {touched.password && errors.password && <p className="invalid-feedback">{errors.password}</p>}
                         </Form.Item>
                         <Form.Item className="auth-item">
                             <Checkbox className="checkbox-fix">Remember me for 30 days.</Checkbox>
                         </Form.Item>
                         <Form.Item className="auth-item">
-                            <Buttons primary>Access Account</Buttons>
+                            <Buttons primary onClick={handleSubmit}>Access Account</Buttons>
                         </Form.Item>
                     </Form>
                 </div>

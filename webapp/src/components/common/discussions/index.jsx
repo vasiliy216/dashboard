@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { StatsPanelHeader } from '../../basic'
 import { Buttons } from '../../basic'
 
@@ -17,9 +18,9 @@ const Discussions = () => {
                         </div>
                         <div className="blog-comments__content">
                             <div className="blog-comments__meta">
-                                <a href="">James Johnson </a>
+                                <Link to="">James Johnson </Link>
                                 on
-                                <a href=""> Hello World!</a>
+                                <Link to=""> Hello World!</Link>
                                 <span className="text-muted"> - 3 days ago</span>
                                 <p className="text-muted">Well, the way they make shows is, they make one show ...</p>
                             </div>
@@ -36,9 +37,9 @@ const Discussions = () => {
                         </div>
                         <div className="blog-comments__content">
                             <div className="blog-comments__meta">
-                                <a href="">James Johnson </a>
+                                <Link to="">James Johnson </Link>
                                 on
-                                <a href=""> Hello World!</a>
+                                <Link to=""> Hello World!</Link>
                                 <span className="text-muted"> - 4 days ago</span>
                                 <p className="text-muted">Well, the way they make shows is, they make one show ...</p>
                             </div>
@@ -55,9 +56,9 @@ const Discussions = () => {
                         </div>
                         <div className="blog-comments__content">
                             <div className="blog-comments__meta">
-                                <a href="">James Johnson </a>
+                                <Link to="">James Johnson </Link>
                                 on
-                                <a href=""> Hello World!</a>
+                                <Link to=""> Hello World!</Link>
                                 <span className="text-muted"> - 5 days ago</span>
                                 <p className="text-muted">Well, the way they make shows is, they make one show ...</p>
                             </div>

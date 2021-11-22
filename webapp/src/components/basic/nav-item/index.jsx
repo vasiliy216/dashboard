@@ -4,8 +4,6 @@ import './style.scss'
 
 const NavItem = props => {
 
-    console.log(window.location.pathname.slice(1) === "user-profile/edit")
-
     const {
         link,
         navName,

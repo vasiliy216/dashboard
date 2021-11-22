@@ -9,7 +9,8 @@ const Buttons = props => {
         small,
         smallOutline,
         primary,
-        white
+        white,
+        onClick,
     } = props;
 
     return (
@@ -19,7 +20,7 @@ const Buttons = props => {
             'btn-outline': outline || smallOutline,
             'btn-primary': primary,
             'btn-white': white
-        })}>{props.children}</button>
+        })} onClick={onClick}>{props.children}</button>
     )
 }
 

@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { FooterNavItem } from '../../basic'
 
 import './style.scss'
@@ -31,7 +32,7 @@ const Footer = props => {
                 })}
             </ul>
             <span className="copyright">
-                Copyright © 2021 <a href="#">DesignRevision</a>
+                Copyright © 2021 <Link to="">DesignRevision</Link>
             </span>
         </div>
     )

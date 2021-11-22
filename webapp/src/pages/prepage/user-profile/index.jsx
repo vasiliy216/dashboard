@@ -1,5 +1,5 @@
-import { PageHeader } from '../../../components/basic'
-import { Footer } from '../../../components/section'
+// import { PageHeader } from '../../../components/basic'
+// import { Footer } from '../../../components/section'
 import { UserProfileCommon, SendMessage, UserTasks, WeeklyPerformanceReport } from '../../../components/common'
 
 import './style.scss'

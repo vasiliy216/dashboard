@@ -1,4 +1,4 @@
-import { Buttons, StatsPanelHeader } from '../../basic'
+import { StatsPanelHeader } from '../../basic'
 import { Checkbox } from 'antd';
 
 import './style.scss'

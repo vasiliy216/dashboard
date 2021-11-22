@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import './style.scss'
 
 const UserProfileCommon = () => {
@@ -18,10 +19,10 @@ const UserProfileCommon = () => {
                     <h4 className="user-details__name">Sierra Brooks</h4>
                     <p className="user-details__description text-white">I'm a design focused engineer.</p>
                     <ul className="user-details__social">
-                        <li><a href="#"><i className="fab fa-facebook-f"></i></a></li>
-                        <li><a href="#"><i className="fab fa-twitter"></i></a></li>
-                        <li><a href="#"><i className="fab fa-github"></i></a></li>
-                        <li><a href="#"><i className="fab fa-vk"></i></a></li>
+                        <li><Link to=""><i className="fab fa-facebook-f"></i></Link></li>
+                        <li><Link to=""><i className="fab fa-twitter"></i></Link></li>
+                        <li><Link to=""><i className="fab fa-github"></i></Link></li>
+                        <li><Link to=""><i className="fab fa-vk"></i></Link></li>
                     </ul>
                     <div className="user-details__data">
                         <div className="user-details__data-wrapper">

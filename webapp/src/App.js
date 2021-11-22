@@ -8,7 +8,6 @@ const App = props => {
   return (
     <Routes>
       <Route exact path="/auth/*" element={<Auth />}/>
-      {/* <Route exact path=""/> */}
       <Route path="/*" element={<Home />}/>
     </Routes>
   )

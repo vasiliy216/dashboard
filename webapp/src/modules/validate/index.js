@@ -8,14 +8,16 @@ export default ({ isRegistration, values, errors }) => {
                 errors.email = 'Invalid email address';
             }
         },
-        name: value => {
-            if (!value) errors.fullName = "Please, enter a name!";
-        },
         password: value => {
             if (!value) errors.password = "Please, enter a password!";
             else if (
                 !/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).{6,}/i.test(value)
             ) errors.password = isRegistration ? "Please, enter lowercase and uppercase letters and numbers" : "Invalid password";
+        },
+        passwordRepeat: value => {
+            if (!value) errors.passwordRepeat = "Please, enter a password!";
+            else if (errors.password) errors.passwordRepeat = errors.password;
+            else if (values.password !== value) errors.passwordRepeat = "Invalid password";
         }
     };
 

@@ -1,9 +1,6 @@
-import LoginForm from '../components/LoginForm'
+import LoginForm from '../components/'
 import { withFormik } from 'formik'
-import { Validate } from '../../'
-
-import { User } from '../../../redux/actions'
-import store from '../../../redux/store'
+import Validate from '../../validate/'
 
 export default withFormik({
     mapPropsToValues: () => ({ email: '', password: '' }),
@@ -16,16 +13,7 @@ export default withFormik({
     },
 
     handleSubmit: (values, { setSubmitting, props }) => {
-        store
-            .dispatch(User.fetchUserLogin(values))
-            .then(({ status }) => {
-
-                if (status === 'success') props.history.push('/')
-
-                setSubmitting(false)
-            }).catch(() => {
-                setSubmitting(false)
-            })
+        console.log(values)
     },
     displayName: "LoginForm"
 

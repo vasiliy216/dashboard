@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { Menu, Dropdown } from 'antd';
 
 import './style.scss'
@@ -40,9 +41,9 @@ const Notification = () => {
             <Menu.Divider />
             <Menu.Item key="2">
                 <div className="notification-dropdawn-item">
-                    <a className="notification__all">
+                    <Link to="" className="notification__all">
                         View all Notifications
-                    </a>
+                    </Link>
                 </div>
             </Menu.Item>
         </Menu>

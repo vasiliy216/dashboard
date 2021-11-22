@@ -13,19 +13,19 @@ const Actions = () => {
                 <StatsPanelHeader>Actions</StatsPanelHeader>
                 <ul className="actions-body card-p-16">
                     <li className="actions-body-item">
-                        <i class="fas fa-flag"></i>
+                        <i className="fas fa-flag"></i>
                         <strong> Status: </strong>
                         <p>Draft</p>
                         <Link to="">Edit</Link>
                     </li>
                     <li className="actions-body-item">
-                        <i class="fas fa-eye"></i>
+                        <i className="fas fa-eye"></i>
                         <strong> Visibility: </strong>
                         <p className="text-success">Public</p>
                         <Link to="">Edit</Link>
                     </li>
                     <li className="actions-body-item">
-                        <i class="far fa-calendar"></i>
+                        <i className="far fa-calendar"></i>
                         <strong> Schedule: </strong>
                         <p>Now</p>
                         <Link to="">Edit</Link>
@@ -36,7 +36,7 @@ const Actions = () => {
                         <i className="fas fa-save"></i> Save Draft
                     </Buttons>
                     <Buttons primary>
-                        <i class="fas fa-copy"></i> Publish
+                        <i className="fas fa-copy"></i> Publish
                     </Buttons>
                 </div>
             </div>
