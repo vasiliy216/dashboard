@@ -51,7 +51,8 @@ const formats = [
     "blockquote",
     "list",
     "bullet",
-    "code-block"
+    "code-block",
+    "script"
 ]
 
 export default AddNewPostCommon

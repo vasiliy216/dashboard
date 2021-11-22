@@ -13,57 +13,6 @@
         font-weight: 300;
     }
 
-    .toolbar-controller {
-        border: 1px solid #e1e5eb;
-        border-radius: 4px 4px 0 0;
-        padding: 8px;
-        color: #3d5170;
-
-        .toolbar-formats + .toolbar-formats {
-            margin-left: 15px;
-        }
-
-        .toolbar-formats {
-            display: inline-block;
-            vertical-align: middle;
-
-            .t-header {
-                font-weight: 500;
-            }
-
-            .toolbar-select {
-                width: 105px;
-                font-weight: 400;
-
-                .ant-select-selector {
-                    border: 0 !important;
-                    box-shadow: none !important;
-                } 
-            }
-
-            .toolbar-select-dropdown {
-                font-size: 13px !important;
-
-            }
-
-            button {
-                background: none;
-                border: none;
-                cursor: pointer;
-                display: inline-block;
-                float: left;
-                height: 24px;
-                padding: 3px 5px;
-                width: 28px;
-                color: #808da2;
-
-                &:hover {
-                    color: #06c;
-                }
-            }
-        }
-    }
-
     .add-new-post__editor {
         position: relative;
 
