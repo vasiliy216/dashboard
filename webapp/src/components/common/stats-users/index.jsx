@@ -1,5 +1,6 @@
 import { DatePicker } from 'antd';
 import { StatsPanelHeader } from '../../basic';
+import { CanvasUsers } from '../../basic/canvas'
 
 import './style.scss'
 
@@ -31,7 +32,7 @@ const StatsUsers = () => {
                             <button className="full-report-button">View Full Report →</button>
                         </div>
                     </div>
-                    <canvas></canvas>
+                    <CanvasUsers />
                 </div>
             </div>
         </div>

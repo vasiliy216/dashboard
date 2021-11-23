@@ -1,0 +1,5 @@
+export { default as CanvasStatisticsComments } from './comments'
+export { default as CanvasStatisticsPages } from './pages'
+export { default as CanvasStatisticsPosts } from './posts'
+export { default as CanvasStatisticsSubscribers } from './subscribers'
+export { default as CanvasStatisticsUsers } from './users'

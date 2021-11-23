@@ -1,4 +1,5 @@
 import { StatsPanelHeader, SelectBasic, FullReport } from '../../basic'
+import { CanvasUsersByDevice } from '../../basic/canvas'
 
 import './style.scss'
 
@@ -9,7 +10,7 @@ const StatsUsersByDevice = () => {
             <div className="card-mrg-all h-100">
                 <StatsPanelHeader>Users By Device</StatsPanelHeader>
                 <div className="stats-device-body">
-                    <canvas></canvas>
+                    <CanvasUsersByDevice />
                 </div>
                 <div className="stats-device-footer card-p-16 card-footer">
                     <SelectBasic />
