@@ -8,6 +8,7 @@ export { default as SelectBasic } from './select/index'
 export { default as FooterNavItem } from './footer-nav-item/index'
 export { default as TopRefferalsItem } from './top-refferals-item/index'
 export { default as BlogPostBasic } from './blog-post-basic/index'
+export { default as ProgressBar } from './progress-bar/index'
 
 export { default as FullReport} from './button/full-report/index'
 export { default as Buttons} from './button/buttons/index'

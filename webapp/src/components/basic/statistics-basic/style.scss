@@ -6,11 +6,13 @@
         width: 100%;
         height: 140px;
         display: flex;
+        position: relative;
     }
 
     .card-body {
         text-align: center;
         margin: auto;
+        z-index: 100;
     
         .stats-title {
             text-transform: uppercase;

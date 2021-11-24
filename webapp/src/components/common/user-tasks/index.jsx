@@ -1,7 +1,9 @@
+import { ProgressBar } from '../../basic'
+
 import './style.scss'
 
 const UserTasks = () => {
-    
+
 
     return (
         <div className="user-tasks">
@@ -24,6 +26,12 @@ const UserTasks = () => {
                             <h4>3</h4>
                             <span className="text-white">TEAMS</span>
                         </div>
+                    </div>
+                </div>
+                <div className="user-tasks-footer">
+                    <div className="row">
+                        <ProgressBar width='80%'>Workload</ProgressBar>
+                        <ProgressBar width='92%'>Performance</ProgressBar>
                     </div>
                 </div>
             </div>

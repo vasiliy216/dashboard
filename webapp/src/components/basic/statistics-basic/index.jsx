@@ -1,3 +1,4 @@
+import {CanvasStatisticsComments} from '../canvas/statistics'
 import './style.scss'
 
 const StatisticsBasic = props => {
@@ -5,7 +6,9 @@ const StatisticsBasic = props => {
     const {
         title,
         values,
-        percentage
+        percentage,
+        borderColor,
+        backgroundColor
     } = props;
 
     return (
@@ -17,6 +20,7 @@ const StatisticsBasic = props => {
                         <h6 className="stats-value">{values}</h6>
                         <span className="stats-percentage increase">{percentage}</span>
                     </div>
+                    <CanvasStatisticsComments borderColor={borderColor} backgroundColor={backgroundColor}/>
                 </div>
             </div>
         </div>

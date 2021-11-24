@@ -1,4 +1,5 @@
 import { StatsPanelHeader } from '../../basic'
+import { CanvasWeeklyPerformanceReport } from '../../basic/canvas'
 
 import './style.scss'
 
@@ -10,9 +11,7 @@ const WeeklyPerformanceReport = () => {
             <div className="card-mrg-all">
                 <StatsPanelHeader>Weekly Performance Report</StatsPanelHeader>
                 <div className="weekly-performance-report__body">
-                    <canvas>
-                        
-                    </canvas>
+                    <CanvasWeeklyPerformanceReport />
                 </div>
             </div>
         </div>
