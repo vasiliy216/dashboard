@@ -1,5 +1,6 @@
 import { UserModal } from '../schemas/index.js'
 import { validationResult } from 'express-validator'
+import { createJwtToken } from '../utility/index.js'
 import bcrypt from 'bcrypt'
 
 export default class UserController {
@@ -61,8 +62,10 @@ export default class UserController {
             }
 
             if (bcrypt.compareSync(PostData.password, data.password)) {
-                res.json({
+                const token = createJwtToken(data)
+                res.status(200).json({
                     status: "success",
+                    token
                 })
             } else {
                 res.json({
@@ -71,6 +74,18 @@ export default class UserController {
                 })
             }
 
+        })
+    }
+    getIm(req, res) {
+        const id = req.user._id
+
+        UserModal.findById(id, (err, user) => {
+            if(err || !user) {
+                return res.status(403).json({
+                    message: "User not found."
+                })
+            }
+            res.json(user)
         })
     }
 }
