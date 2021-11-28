@@ -1,0 +1,41 @@
+posts:
+- _id 
+- text                      String
+- title                     String
+- image                     
+- user                      Object
+- categories                []
+- status                    Boolen
+- visibility                Boolen
+- schedule                  Date
+- created_up, updated_up
+
+user: 
+- _id
+- first_name                String
+- last_name                 String
+- email                     String
+- passport                  String
+- location                  String
+- phone_number              String
+- avatar
+- background_photo
+- is_public_email           Boolen
+- bio                       String
+- tags                      []
+- social                    []
+- active                    Boolen
+- confirmed                 String
+- confirm_hash              String
+- last_seen                 Date
+- created_up, updated_up
+
+message:                    ?
+-
+
+statistics:                 ?
+-   
+
+statistics_users:           ?
+- user_id                   
+- weekly_performance_report 
