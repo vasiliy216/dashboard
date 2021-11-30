@@ -100,7 +100,7 @@ const LoginForm = props => {
             </div>
             <div className="login-form__meta">
                 <Link to="">Forgot your password?</Link>
-                <Link to="/auth/login">Sign In?</Link>
+                <Link to="/account/login">Sign In?</Link>
             </div>
         </div>
     )

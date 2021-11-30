@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { UserAvatar } from '../'
 import { Menu, Dropdown } from 'antd';
 
 import './style.scss'
@@ -6,7 +7,9 @@ import './style.scss'
 const NavItemSmall = props => {
 
     const {
-        username
+        userName,
+        userAvatar,
+        UserLogout
     } = props;
 
     const menu = (
@@ -37,7 +40,7 @@ const NavItemSmall = props => {
             </Menu.Item>
             <Menu.Divider />
             <Menu.Item key="4">
-                <Link to="user-profile" className="dropdown-user-menu text-danger">
+                <Link to="user-profile" onClick={UserLogout} className="dropdown-user-menu text-danger">
                     <i className="fas fa-sign-out-alt"></i>
                     <span>Logout</span>
                 </Link>
@@ -47,11 +50,11 @@ const NavItemSmall = props => {
 
     return (
 
-        <Dropdown overlay={menu} trigger={['click']} placement="bottomCenter">
+        <Dropdown overlay={menu} trigger={['click']} placement="bottomRight">
             <li className="dropdown-nav-item__right">
                 <div className="dropdown-toggle">
-                    <img className="user-avatar" src="https://designrevision.com/demo/shards-dashboard-lite/images/avatars/0.jpg" alt="" />
-                    <span className="user-name">{username}</span>
+                    <UserAvatar userAvatar={userAvatar} />
+                    <span className="user-name">{userName}</span>
                 </div>
             </li>
         </Dropdown>

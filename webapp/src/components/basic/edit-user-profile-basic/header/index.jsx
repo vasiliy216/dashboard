@@ -1,7 +1,12 @@
+import { UserAvatar } from '../../'
+
 import './style.scss'
 
-const Header = () => {
+const Header = (props) => {
 
+    const {
+        ChangeData
+    } = props
 
     return (
         <div className="edit-user-profile__header">

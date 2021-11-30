@@ -76,7 +76,7 @@ const LoginForm = props => {
             </div>
             <div className="login-form__meta">
                 <Link to="">Forgot your password?</Link>
-                <Link to="/auth/register">Create new account?</Link>
+                <Link to="/account/register">Create new account?</Link>
             </div>
         </div>
     )

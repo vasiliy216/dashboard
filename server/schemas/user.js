@@ -3,11 +3,7 @@ import { generatorPasswordHash } from '../utility/index.js'
 
 const UserSchema = new mongoose.Schema(
     {
-        first_name: {
-            type: String,
-            default: ""
-        },
-        last_name: {
+        user_name: {
             type: String,
             default: ""
         },
@@ -21,6 +17,7 @@ const UserSchema = new mongoose.Schema(
         },
         location: {
             type: String,
+            default: ""
         },
         phone_number: {
             type: String,

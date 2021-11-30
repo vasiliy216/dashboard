@@ -2,7 +2,12 @@ import { NavItemSmall, Notification } from '../../basic'
 
 import './style.scss';
 
-const Header = () => {
+const Header = (props) => {
+
+    const {
+        user,
+        UserLogout
+    } = props
 
     return (
         <div className="main-navbar">
@@ -17,7 +22,11 @@ const Header = () => {
                 </form>
                 <ul className="navbar-nav">
                     <Notification />
-                    <NavItemSmall username="Sierra Brooks"/>
+                    <NavItemSmall
+                        UserLogout={UserLogout}
+                        userName={"sdf"}
+                        userAvatar={null}
+                    />
                 </ul>
             </nav>
         </div>

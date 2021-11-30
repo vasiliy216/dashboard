@@ -1,4 +1,4 @@
-import { EditUserProfileCommon } from '../../../components/common'
+import { EditUserProfileCommon } from '../../../containers/common'
 
 import './style.scss'
 

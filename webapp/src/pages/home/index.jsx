@@ -1,4 +1,5 @@
-import { Header, Menu, Body, Footer } from '../../components/section'
+import { Menu, Body, Footer } from '../../components/section'
+import { Header } from '../../containers/section'
 import './style.scss'
 
 const Home = () => {

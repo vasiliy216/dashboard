@@ -22,6 +22,10 @@ const actions = {
                 }
             })
     },
+    fetchUserLogout: () => dispatch => {
+        dispatch(actions.setIsAuth(false));
+        delete window.localStorage.token;
+    },
     fetchUserLogin: postData => dispatch => {
         return userApi.login(postData).then(({ data }) => {
             const { token } = data;

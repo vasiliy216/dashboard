@@ -2,7 +2,8 @@ import { verifyJwtToken } from '../utility/index.js'
 
 export default (req, res, next) => {
 
-    if (req.path.includes("auth")) return next()
+    if (req.path.includes("account"))
+        return next()
 
     console.log("middlewares checkAuth")
 
@@ -16,10 +17,11 @@ export default (req, res, next) => {
                 }
 
                 next();
+                
             }).catch((err) => {
-                res.json({ 
+                res.json({
                     error: err,
-                    message: "Invalid token" 
+                    message: "Invalid token"
                 });
             })
     }

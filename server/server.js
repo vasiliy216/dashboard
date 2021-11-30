@@ -27,9 +27,10 @@ const User = new UserController();
 const http = createServer(app);
 
 app.get('/user/im', User.getIm)
+app.get('/user/logout')
 
-app.post('/auth/register', registerValidation, User.create);
-app.post('/auth/login', loginValidation, User.login);
+app.post('/account/register', registerValidation, User.create);
+app.post('/account/login', loginValidation, User.login);
 // app.put('/user/:id',  User);
 
 http.listen(process.env.PORT, () => {

@@ -12,8 +12,8 @@ const App = props => {
 
   return (
     <Routes>
-      <Route exact path="/auth/*" element={<Auth />}/>
-      <Route path="/*" element={ isAuth ? <Home /> : <Navigate replace to="/auth/login" /> }/>
+      <Route exact path="/account/*" element={<Auth />}/>
+      <Route path="/*" element={ isAuth ? <Home /> : <Navigate replace to="/account/login" /> }/>
     </Routes>
   )
 }
