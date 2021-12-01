@@ -2,16 +2,19 @@ import { useState, useEffect } from 'react'
 import { connect } from 'react-redux'
 import { User } from '../../../redux/actions'
 
-import { EditUserProfileCommon as EditUserProfileCommonBase} from '../../../components/common'
+import { EditUserProfileCommon as EditUserProfileCommonBase } from '../../../components/common'
 
 const EditUserProfileCommon = (props) => {
-    
+
     const {
-        user
+        user,
+        fetchUserUpdate
     } = props
-    
+
     const [data, setData] = useState({
         user_name: user.user_name,
+        first_name: user.first_name,
+        last_name: user.last_name,
         email: user.email,
         phone_number: user.phone_number,
         avatar: user.avatar,
@@ -20,35 +23,27 @@ const EditUserProfileCommon = (props) => {
         location: user.location,
         bio: user.bio,
         tags: user.tags,
-        social: user.social
+        social: user.social,
+        old_password: '',
+        new_password: '',
+        reapet_password: ''
     })
-
-    const [userName, setUserName] = useState({
-        first_name: user.user_name.split(" ")[0] || '',
-        last_name: user.user_name.split(" ")[1] || ''
-    })
-
-    console.log(userName)
 
     const ChangeData = (value) => {
         setData(value)
     }
 
-    const ChangeUserName = (value) => {
-        setUserName(value)
-    }
-
     const SaveChanges = () => {
-
-        console.log(data, userName)
+        fetchUserUpdate({
+            ...data,
+            user_name: data.first_name + " " + data.last_name
+        })
     }
 
     return (
-        <EditUserProfileCommonBase 
+        <EditUserProfileCommonBase
             data={data}
             ChangeData={ChangeData}
-            userName={userName}
-            ChangeUserName={ChangeUserName}
             SaveChanges={SaveChanges}
         />
     )

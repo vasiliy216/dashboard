@@ -42,11 +42,19 @@
                 padding-left: 5px;
 
                 .form-control {
-                    
 
                     i {
                         color: #abb6bf;
                         line-height: 13px;
+                    }
+
+                    .ant-input {
+                        font-size: inherit;
+                        font-weight: inherit;
+                    }
+        
+                    .ant-input-prefix {
+                        margin-right: 10px;
                     }
                 }
             }

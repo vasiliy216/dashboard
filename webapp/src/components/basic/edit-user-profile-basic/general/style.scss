@@ -3,6 +3,27 @@
     .form-group {
         flex: 0 0 50%;
         max-width: 50%;
+
+        .select {
+            display: flex;
+            padding: 0;
+
+            .ant-select-selector {
+                border-radius: 4px;
+                padding: 7px 12px;
+                height: auto;
+
+                &:after {
+                    line-height: 1.5;
+                }
+
+                .ant-select-selection-item {
+                    line-height: 1.5;
+                    font-size: inherit;
+                    font-weight: inherit;
+                }
+            }
+        }
     }
 }
 

@@ -13,7 +13,7 @@ const StatsUsersByDevice = () => {
                     <CanvasUsersByDevice />
                 </div>
                 <div className="stats-device-footer card-p-16 card-footer">
-                    <SelectBasic />
+                    <SelectBasic options={['Last Week', 'Today', 'Last Month', 'Last Year']} />
                     <FullReport>Full report →</FullReport>
                 </div>
             </div>

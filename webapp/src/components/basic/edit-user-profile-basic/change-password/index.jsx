@@ -14,15 +14,30 @@ const General = () => {
             <div className="form-row mx-24 col-3">
                 <div className="form-group">
                     <label htmlFor="OldPassword">Old Password</label>
-                    <Input id="OldPassword" className="form-control" placeholder="Old Password" />
+                    <Input
+                        id="OldPassword"
+                        className="form-control"
+                        placeholder="Old Password"
+                        type="password"
+                    />
                 </div>
                 <div className="form-group">
                     <label htmlFor="NewPassword">New Password</label>
-                    <Input id="NewPassword" className="form-control" placeholder="New Password" />
+                    <Input
+                        id="NewPassword"
+                        className="form-control"
+                        placeholder="New Password"
+                        type="password"
+                    />
                 </div>
                 <div className="form-group">
                     <label htmlFor="RepeatNewPassword">Repeat New Password</label>
-                    <Input id="RepeatNewPassword" className="form-control" placeholder="Repeat New Password" />
+                    <Input
+                        id="RepeatNewPassword"
+                        className="form-control"
+                        placeholder="Repeat New Password"
+                        type="password"
+                    />
                 </div>
             </div>
         </>

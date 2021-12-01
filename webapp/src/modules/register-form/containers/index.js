@@ -24,7 +24,7 @@ export default withFormik({
                 password: password
             }))
             .then(data => {
-                document.location.pathname = '/auth/login'
+                document.location.pathname = '/account/login'
             })
             .catch(err => {
                 console.log(err)

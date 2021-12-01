@@ -15,6 +15,10 @@ const Header = (props) => {
         fetchUserLogout();
     }
 
+    useEffect(() => {
+
+    }, [user])
+
     return (
         <HeaderBase 
             user={user}

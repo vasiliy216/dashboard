@@ -7,8 +7,6 @@ const General = (props) => {
     const {
         data,
         ChangeData,
-        userName,
-        ChangeUserName
     } = props
 
     const { TextArea } = Input;
@@ -30,8 +28,8 @@ const General = (props) => {
                             <Input
                                 id="firstName"
                                 className="form-control"
-                                value={"asd"}
-                                onChange={e => ChangeUserName({...userName, first_name: e.target.value})}
+                                value={data.first_name}
+                                onChange={e => ChangeData({ ...data, first_name: e.target.value })}
                             />
                         </div>
                         <div className="form-group">
@@ -39,8 +37,8 @@ const General = (props) => {
                             <Input
                                 id="lastName"
                                 className="form-control"
-                                value={userName.last_name}
-                                onChange={e => ChangeUserName({...userName, last_name: e.target.value})}
+                                value={data.last_name}
+                                onChange={e => ChangeData({ ...data, last_name: e.target.value })}
                             />
                         </div>
                         <div className="form-group">
@@ -75,9 +73,17 @@ const General = (props) => {
                         </div>
                         <div className="form-group">
                             <label htmlFor="displayEmail">Display Email Publicly</label>
-                            <Input
+                            <Select
+                                dropdownMatchSelectWidth={false}
+                                // defaultValue={data.is_public_email}
+                                className="form-control select"
                                 id="displayEmail"
-                                className="form-control" />
+                                value={data.is_public_email}
+                                onChange={e => ChangeData({ ...data, is_public_email: e })}
+                            >
+                                <Option className="device-select-option" value={true}>Yes, display my email</Option>
+                                <Option className="device-select-option" value={false}>No, do not display my email.</Option>
+                            </Select>
                         </div>
                     </div>
                 </div>
@@ -103,7 +109,7 @@ const General = (props) => {
                             id="userBio"
                             className="form-control"
                             value={data.bio}
-                            onChange={(e) => ChangeData({...data, bio: e.target.value})}
+                            onChange={(e) => ChangeData({ ...data, bio: e.target.value })}
                         />
                     </div>
                 </div>
@@ -113,10 +119,13 @@ const General = (props) => {
                         <Select
                             mode="tags"
                             className="form-group-tags form-control"
-                            onChange={(e) => ChangeData({...data, tags: e})}
+                            onChange={(e) => ChangeData({ ...data, tags: e })}
                             value={data.tags || []}
-                            >
-                            <Option key="0">React.JS</Option>
+                        >
+                            <Option key="React.JS">React.JS</Option>
+                            <Option key="Vue.JS">Vue.JS</Option>
+                            <Option key="Laravel">Laravel</Option>
+                            <Option key="Angular">Angular</Option>
                         </Select>
                     </div>
                 </div>
