@@ -1,4 +1,5 @@
 import { userApi } from '../../utils/api'
+import { OpenNotification } from '../../utils/helpers'
 
 const actions = {
     setUserData: data => ({
@@ -28,29 +29,54 @@ const actions = {
     },
     fetchUserUpdate: postData => dispatch => {
         return userApi.update(postData).then(({ data }) => {
-            const { token } = data;
+            const {
+                token,
+                status,
+                message
+            } = data;
 
             window.localStorage['token'] = token;
             window.axios.defaults.headers.common["token"] = token;
 
             dispatch(actions.fetchUserData());
             dispatch(actions.setUserData(data));
+
+            OpenNotification({
+                type: status,
+                text: message
+            })
 
             return data;
         })
             .catch(err => {
 
+                OpenNotification({
+                    type: "error",
+                    text: "Incorrect password!"
+                })
+
+                return new Error(err);
             })
     },
     fetchUserLogin: postData => dispatch => {
         return userApi.login(postData).then(({ data }) => {
-            const { token } = data;
+            const {
+                token,
+                status,
+                message
+            } = data;
 
             window.localStorage['token'] = token;
             window.axios.defaults.headers.common["token"] = token;
 
             dispatch(actions.fetchUserData());
             dispatch(actions.setUserData(data));
+
+            OpenNotification({
+                type: status,
+                text: message,
+                is_validation: true
+            })
 
             return data;
         }).catch(err => {

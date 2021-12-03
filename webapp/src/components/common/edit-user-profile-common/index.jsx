@@ -7,6 +7,7 @@ const EditUserProfileCommon = (props) => {
 
     const {
         data,
+        error,
         ChangeData,
         SaveChanges
     } = props
@@ -21,7 +22,7 @@ const EditUserProfileCommon = (props) => {
                         <hr />
                         <Social ChangeData={ChangeData} data={data}/>
                         <hr />
-                        <ChangePassword ChangeData={ChangeData} data={data}/>
+                        <ChangePassword ChangeData={ChangeData} data={data} error={error} />
                     </div>
                 </div>
                 <div className="edit-user-profile__footer">

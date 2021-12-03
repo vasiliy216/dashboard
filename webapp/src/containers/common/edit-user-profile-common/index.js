@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { connect } from 'react-redux'
 import { User } from '../../../redux/actions'
+import { OpenNotification } from '../../../utils/helpers'
 
 import { EditUserProfileCommon as EditUserProfileCommonBase } from '../../../components/common'
 
@@ -26,7 +27,12 @@ const EditUserProfileCommon = (props) => {
         social: user.social,
         old_password: '',
         new_password: '',
-        reapet_password: ''
+        repeat_password: ''
+    })
+
+    const [error, setError] = useState({
+        error_old_password: false,
+        error_repeat_password: false
     })
 
     const ChangeData = (value) => {
@@ -34,15 +40,52 @@ const EditUserProfileCommon = (props) => {
     }
 
     const SaveChanges = () => {
-        fetchUserUpdate({
-            ...data,
-            user_name: data.first_name + " " + data.last_name
-        })
+
+        if (data.new_password !== data.repeat_password) {
+            setError(prevError => ({
+                ...prevError,
+                error_repeat_password: true
+            }))
+            OpenNotification({
+                type: 'error',
+                text: "Passwords don't match!"
+            })
+        } else {
+            setError(prevError => ({
+                error_old_password: false,
+                error_repeat_password: false
+            }))
+            fetchUserUpdate({
+                ...data,
+                user_name: data.first_name + " " + data.last_name
+            }).then(newData => {
+                if(newData.name === "Error") {
+                    setError(prevError => ({
+                        ...prevError,
+                        error_old_password: true,
+                    }))
+                } else {
+                    setData(prevData => ({
+                        ...prevData,
+                        old_password: '',
+                        new_password: '',
+                        repeat_password: ''
+                    }))
+                }
+            }).catch(err => {
+                // console.log(err)
+                // setError(prevError => ({
+                //     ...prevError,
+                //     error_old_password: true,
+                // }))
+            })
+        }
     }
 
     return (
         <EditUserProfileCommonBase
             data={data}
+            error={error}
             ChangeData={ChangeData}
             SaveChanges={SaveChanges}
         />

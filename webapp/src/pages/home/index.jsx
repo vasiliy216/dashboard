@@ -1,19 +1,30 @@
 import { Menu, Body, Footer } from '../../components/section'
+import { LoaderSnipper } from '../../components/basic'
 import { Header } from '../../containers/section'
+import { connect } from 'react-redux';
+
 import './style.scss'
 
-const Home = () => {
+const Home = (props) => {
 
-    return (
-        <>
-            <Menu />
-            <div className="main-content">
-                <Header />
-                <Body />
-                <Footer />
-            </div>
-        </>
-    )
+    const {
+        user
+    } = props
+
+    if (user) {
+        return (
+            <>
+                <Menu />
+                <div className="main-content">
+                    <Header />
+                    <Body />
+                    <Footer />
+                </div>
+            </>
+        )
+    } else {
+        return <LoaderSnipper />
+    }
 }
 
-export default Home
+export default connect(({ user }) => ({ user: user.data }))(Home)

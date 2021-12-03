@@ -24,7 +24,7 @@ const Header = (props) => {
                     <Notification />
                     <NavItemSmall
                         UserLogout={UserLogout}
-                        userName={"sdf"}
+                        userName={user.user_name }
                         userAvatar={null}
                     />
                 </ul>
