@@ -19,7 +19,7 @@ export default (req, res, next) => {
                 next();
                 
             }).catch((err) => {
-                res.json({
+                res.status(403).json({
                     error: err,
                     message: "Invalid token"
                 });

@@ -1,7 +1,8 @@
 import React from 'react'
 import { Route, Routes } from 'react-router-dom'
 
-import { BlogDashboard, BlogPost, AddNewPost, Tables, UserProfile, EditUserProfile } from '../../../pages/prepage'
+import { BlogDashboard, BlogPost, AddNewPost, Tables, EditUserProfile } from '../../../pages/prepage'
+import { UserProfile } from '../../../containers/prepage'
 
 import { Errors } from '../../common/'
 

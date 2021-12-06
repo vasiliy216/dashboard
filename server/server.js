@@ -6,8 +6,10 @@ const app = express();
 import { createServer } from 'http'
 import mongoose from 'mongoose'
 import { checkAuth } from './middlewares/index.js'
-import { UserController } from './controllers/index.js'
+import { UserController, UploadFileController } from './controllers/index.js'
 import { registerValidation, loginValidation } from './utility/validation/index.js'
+
+import { Multer } from './core/index.js'
 
 dotenv.config()
 
@@ -23,15 +25,20 @@ app.use(bodyParser.json());
 app.use(checkAuth);
 
 const User = new UserController();
+const UploadFile = new UploadFileController();
 
 const http = createServer(app);
 
 app.get('/user/im', User.getIm)
-app.get('/user/logout')
+app.put('/user/update', User.update)
+// app.get('/user/delete')
 
 app.post('/account/register', registerValidation, User.create);
 app.post('/account/login', loginValidation, User.login);
 // app.put('/user/:id',  User);
+
+app.post('/file', Multer.single('file'), UploadFile.create)
+app.delete('/file')
 
 http.listen(process.env.PORT, () => {
     console.log(`Server: http://localhost:${process.env.PORT}`);

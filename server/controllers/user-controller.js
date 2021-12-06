@@ -1,6 +1,7 @@
 import { UserModal } from '../schemas/index.js'
 import { validationResult } from 'express-validator'
 import { createJwtToken } from '../utility/index.js'
+import { generatorPasswordHash } from '../utility/index.js'
 import bcrypt from 'bcrypt'
 
 export default class UserController {
@@ -42,6 +43,46 @@ export default class UserController {
         })
 
     }
+    update(req, res) {
+        const PostData = req.body
+        const user = req.user
+
+        UserModal.findOneAndUpdate(
+            { _id: user._id },
+            PostData,
+            (err, data) => {
+                if (err || !data) {
+                    return res.status(403).json({
+                        status: "error",
+                        message: "Something went wrong.",
+                        err
+                    })
+                }
+
+                if (PostData.new_password && PostData.old_password) {
+
+                    if (bcrypt.compareSync(PostData.old_password, data.password)) {
+                        data.password = PostData.new_password;      
+                    } else {
+                        return res.status(403).json({
+                            status: "error",
+                            message: "Incorrect password!"
+                        })
+                    }
+
+                }
+
+                data.save();
+                const token = createJwtToken(data)
+                res.status(200).json({
+                    status: "success",
+                    message: "Your profile has been successfully updated!",
+                    token
+                })
+            })
+
+
+    }
     login(req, res) {
         const PostData = {
             email: req.body.email,
@@ -65,12 +106,13 @@ export default class UserController {
                 const token = createJwtToken(data)
                 res.status(200).json({
                     status: "success",
+                    message: "Authorization is successful.",
                     token
                 })
             } else {
                 res.json({
                     status: "error",
-                    message: "Incorrect password or email"
+                    message: "Incorrect password or email!"
                 })
             }
 
@@ -79,8 +121,8 @@ export default class UserController {
     getIm(req, res) {
         const id = req.user._id
 
-        UserModal.findById(id, (err, user) => {
-            if(err || !user) {
+        UserModal.findById(id, '-password', (err, user) => {
+            if (err || !user) {
                 return res.status(403).json({
                     message: "User not found."
                 })

@@ -1,0 +1,29 @@
+.user-details__tags {
+    border-top: 1px solid #e1e5eb;
+    padding: 24px;
+    word-wrap: break-word;
+
+    display: block;
+
+    .user-tag {
+        display: inline-block;
+
+        font-weight: 300;
+        font-size: 11px;
+
+        margin-bottom: 8px;
+        margin-right: 5px;
+
+        text-transform: uppercase;
+        text-align: center;
+        white-space: nowrap;
+        line-height: 1;
+
+        border: 1px solid #e1e5eb;
+        background-color: #fbfbfb;
+
+        padding: 6px 8px;
+
+        border-radius: 160px;
+    }
+}

@@ -22,7 +22,7 @@ user:
 - background_photo
 - is_public_email           Boolen
 - bio                       String
-- tags                      []
+- tags                      {}
 - social                    []
 - active                    Boolen
 - confirmed                 String

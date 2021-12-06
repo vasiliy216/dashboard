@@ -1,0 +1,38 @@
+.user-details__data {
+    border-top: 1px solid #e1e5eb;
+    padding: 24px;
+
+    &-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        margin-right: -15px;
+        margin-left: -15px;
+
+        & + .user-details__data-wrapper {
+            margin-top: 16px;
+        }
+
+        .user-text__data {
+            flex-basis: 0;
+            flex-grow: 1;
+            width: 50%;
+            padding-right: 15px;
+            padding-left: 15px;
+
+            span {
+                display: block;
+                line-height: 23px;
+                word-wrap: break-word;
+
+                &:first-child {
+                    font-weight: 400;
+                    color: #3d5170;
+                }
+
+                &:last-child {
+                    color: #818ea3;
+                }
+            }
+        }
+    }
+}

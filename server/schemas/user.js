@@ -7,6 +7,14 @@ const UserSchema = new mongoose.Schema(
             type: String,
             default: ""
         },
+        first_name: {
+            type: String,
+            default: ""
+        },
+        last_name: {
+            type: String,
+            default: ""
+        },
         email: {
             type: String,
             required: true,
@@ -40,11 +48,18 @@ const UserSchema = new mongoose.Schema(
             default: ""
         },
         tags: {
-            type: String,
-            default: ""
+            type: Array,
         },
         social: {
-            type: Array
+            type: Object,
+            default: {
+                facebook: '',
+                twitter: '',
+                github: '',
+                vk: '',
+                dribbble: '',
+                slack: ''
+            }
         },
         // active: {
         //     type: Boolean
