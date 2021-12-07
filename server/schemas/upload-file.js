@@ -7,7 +7,7 @@ const UploadFileSchema = new mongoose.Schema(
         ext: String,
         url: String,
         user: {
-            type: mongoose.Types.ObjectId,
+            type: mongoose.Schema.Types.ObjectId,
             ref: "User",
             required: true
         }

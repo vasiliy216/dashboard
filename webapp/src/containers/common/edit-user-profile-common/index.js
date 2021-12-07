@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { connect } from 'react-redux'
 import { User } from '../../../redux/actions'
 import { OpenNotification } from '../../../utils/helpers'
+import { filesApi } from '../../../utils/api'
 
 import { EditUserProfileCommon as EditUserProfileCommonBase } from '../../../components/common'
 
@@ -35,8 +36,24 @@ const EditUserProfileCommon = (props) => {
         error_repeat_password: false
     })
 
+    const [imgAvatar, setImgAvatar] = useState()
+
     const ChangeData = (value) => {
         setData(value)
+    }
+
+    //кастыль
+    const ChangeFilesAvatar = async file => {
+        await filesApi
+            .upload(file[0])
+            .then(result => {
+
+                const { file } = result.data
+
+                // console.log(file)
+                                
+                setImgAvatar(file)
+            })
     }
 
     const SaveChanges = () => {
@@ -57,9 +74,10 @@ const EditUserProfileCommon = (props) => {
             }))
             fetchUserUpdate({
                 ...data,
-                user_name: data.first_name + " " + data.last_name
+                user_name: data.first_name + " " + data.last_name,
+                avatar: imgAvatar._id
             }).then(newData => {
-                if(newData.name === "Error") {
+                if (newData.name === "Error") {
                     setError(prevError => ({
                         ...prevError,
                         error_old_password: true,
@@ -85,9 +103,11 @@ const EditUserProfileCommon = (props) => {
     return (
         <EditUserProfileCommonBase
             data={data}
+            imgAvatar={imgAvatar}
             error={error}
             ChangeData={ChangeData}
             SaveChanges={SaveChanges}
+            ChangeFilesAvatar={ChangeFilesAvatar}
         />
     )
 

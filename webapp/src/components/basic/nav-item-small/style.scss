@@ -9,14 +9,22 @@
 
         margin: auto 16px;
 
-        .user-avatar {
+        .user-avatar_wrapper {
             width: 40px;
             height: 40px;
+
+            overflow: hidden;
 
             margin-right: 9px;
 
             border-radius: 50px;
+
+            .user-avatar {
+                width: 40px;
+                height: auto;
+            }
         }
+
         .user-name {
             color: #00000080;
             white-space: nowrap;

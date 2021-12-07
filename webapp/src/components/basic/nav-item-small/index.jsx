@@ -53,7 +53,9 @@ const NavItemSmall = props => {
         <Dropdown overlay={menu} trigger={['click']} placement="bottomRight">
             <li className="dropdown-nav-item__right">
                 <div className="dropdown-toggle">
-                    <UserAvatar userAvatar={userAvatar} />
+                    <div className="user-avatar_wrapper">
+                        <UserAvatar userAvatar={userAvatar} />
+                    </div>
                     <span className="user-name">{userName}</span>
                 </div>
             </li>

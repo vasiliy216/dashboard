@@ -121,13 +121,25 @@ export default class UserController {
     getIm(req, res) {
         const id = req.user._id
 
-        UserModal.findById(id, '-password', (err, user) => {
-            if (err || !user) {
-                return res.status(403).json({
-                    message: "User not found."
-                })
-            }
-            res.json(user)
-        })
+        UserModal
+            .findById(id, '-password')
+            .populate('avatar background_photo')
+            .exec((err, user) => {
+                if (err || !user) {
+                    return res.status(403).json({
+                        message: "User not found."
+                    })
+                }
+                res.json(user)
+            })
+
+        // UserModal.findById(id, '-password', (err, user) => {
+        //     if (err || !user) {
+        //         return res.status(403).json({
+        //             message: "User not found."
+        //         })
+        //     }
+        //     res.json(user)
+        // })
     }
 }

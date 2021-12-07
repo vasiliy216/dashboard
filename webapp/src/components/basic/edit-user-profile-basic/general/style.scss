@@ -52,6 +52,7 @@
         overflow: hidden;
         position: relative;
         max-width: 120px;
+        max-height: 120px;
         box-shadow: 0 2px 0 rgba(90, 97, 105, .11), 0 4px 8px rgba(90, 97, 105, .12), 0 10px 10px rgba(90, 97, 105, .06), 0 7px 70px rgba(90, 97, 105, .10);
         
         &:hover {
@@ -60,6 +61,11 @@
                 opacity: 1;
                 cursor: pointer;
             }
+        }
+
+        .edit-user-details__avatar-wrapper {
+            width: inherit;
+            height: inherit;
         }
 
         .empty-avatar {

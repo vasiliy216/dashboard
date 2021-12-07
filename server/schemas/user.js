@@ -32,12 +32,12 @@ const UserSchema = new mongoose.Schema(
             default: ""
         },
         avatar: {
-            type: String,
-            default: null
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "UploadFile",
         },
         background_photo: {
-            type: String,
-            default: null
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "UploadFile",
         },
         is_public_email: {
             type: Boolean,

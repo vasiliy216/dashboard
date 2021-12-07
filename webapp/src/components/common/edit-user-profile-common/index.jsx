@@ -7,20 +7,27 @@ const EditUserProfileCommon = (props) => {
 
     const {
         data,
+        imgAvatar,
         error,
         ChangeData,
-        SaveChanges
+        SaveChanges,
+        ChangeFilesAvatar
     } = props
 
     return (
         <div className="edit-user-profile card-p">
             <div className="card-mrg-all">
-                <Header ChangeData={ChangeData} backgroundPhoto={data.background_photo}/>
+                <Header ChangeData={ChangeData} backgroundPhoto={data.background_photo} />
                 <div className="edit-user-profile__body">
                     <div className="edit-user-profile__form">
-                        <General ChangeData={ChangeData} data={data}/>
+                        <General
+                            ChangeData={ChangeData}
+                            data={data}
+                            ChangeFilesAvatar={ChangeFilesAvatar}
+                            imgAvatar={imgAvatar}
+                        />
                         <hr />
-                        <Social ChangeData={ChangeData} data={data}/>
+                        <Social ChangeData={ChangeData} data={data} />
                         <hr />
                         <ChangePassword ChangeData={ChangeData} data={data} error={error} />
                     </div>

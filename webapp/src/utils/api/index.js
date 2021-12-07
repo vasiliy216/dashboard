@@ -1,2 +1,2 @@
 export { default as userApi } from "./user"
-export { default as userFiles } from "./files"
+export { default as filesApi } from "./files"

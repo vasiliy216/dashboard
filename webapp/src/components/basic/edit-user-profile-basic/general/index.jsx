@@ -6,7 +6,9 @@ const General = (props) => {
 
     const {
         data,
+        imgAvatar,
         ChangeData,
+        ChangeFilesAvatar
     } = props
 
     const { TextArea } = Input;
@@ -75,7 +77,6 @@ const General = (props) => {
                             <label htmlFor="displayEmail">Display Email Publicly</label>
                             <Select
                                 dropdownMatchSelectWidth={false}
-                                // defaultValue={data.is_public_email}
                                 className="form-control select"
                                 id="displayEmail"
                                 value={data.is_public_email}
@@ -90,15 +91,18 @@ const General = (props) => {
                 <div className="form-general-right">
                     <label htmlFor="userProfilePicture">Profile Picture</label>
                     <div className="edit-user-details__avatar">
-                        <UserAvatar userAvatar={null} />
+                        <UserAvatar userAvatar={imgAvatar || data.avatar} />
                         <label htmlFor="userProfilePicture" className="edit-user-details__avatar__change">
                             <i className="fas fa-camera"></i>
                             <input
+                                onChange={(info) => ChangeFilesAvatar(info.target.files)}
                                 id="userProfilePicture"
                                 type="file" />
                         </label>
                     </div>
-                    <Buttons white small><i className="fas fa-cloud-upload-alt"></i> Upload Image</Buttons>
+                    <Buttons white small>
+                        <i className="fas fa-cloud-upload-alt"></i> Upload Image
+                    </Buttons>
                 </div>
             </div>
             <div className="form-row mx-24">

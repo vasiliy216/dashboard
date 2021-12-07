@@ -4,7 +4,7 @@ const UserAvatar = ({ userAvatar }) => {
 
     if (userAvatar) {
         return (
-            <img className="user-avatar" src="https://designrevision.com/demo/shards-dashboard-lite/images/avatars/0.jpg" alt="" />
+            <img className="user-avatar" src={userAvatar.url} alt={userAvatar.filename} />
         )
     } else {
         return (

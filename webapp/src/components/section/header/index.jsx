@@ -25,7 +25,7 @@ const Header = (props) => {
                     <NavItemSmall
                         UserLogout={UserLogout}
                         userName={user.user_name }
-                        userAvatar={null}
+                        userAvatar={user.avatar}
                     />
                 </ul>
             </nav>
