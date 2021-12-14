@@ -132,14 +132,20 @@ export default class UserController {
                 }
                 res.json(user)
             })
+    }
+    getAll(req, res) {
+        // console.log(req.socket.remoteAddress)
 
-        // UserModal.findById(id, '-password', (err, user) => {
-        //     if (err || !user) {
-        //         return res.status(403).json({
-        //             message: "User not found."
-        //         })
-        //     }
-        //     res.json(user)
-        // })
+        const id = req.user._id;
+
+        UserModal
+            .find({_id: {$ne: id}}, 'first_name last_name phone_number')
+            .then(data => res.json(data))
+            .catch(err => {
+                return res.status(404).json({
+                    status: 'error',
+                    message: err
+                })
+            })
     }
 }

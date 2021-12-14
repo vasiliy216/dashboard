@@ -36,7 +36,8 @@ const EditUserProfileCommon = (props) => {
         error_repeat_password: false
     })
 
-    const [imgAvatar, setImgAvatar] = useState()
+    const [imgAvatar, setImgAvatar] = useState('')
+    const [imgBackground, setImgBackground] = useState('')
 
     const ChangeData = (value) => {
         setData(value)
@@ -53,6 +54,16 @@ const EditUserProfileCommon = (props) => {
                 // console.log(file)
                                 
                 setImgAvatar(file)
+            })
+    }
+
+    const ChangeFilesBackground = async file => {
+        await filesApi
+            .upload(file[0])
+            .then(result => {
+                const { file } = result.data
+
+                setImgBackground(file);
             })
     }
 
@@ -75,7 +86,8 @@ const EditUserProfileCommon = (props) => {
             fetchUserUpdate({
                 ...data,
                 user_name: data.first_name + " " + data.last_name,
-                avatar: imgAvatar._id
+                avatar: imgAvatar._id || data.avatar,
+                background_photo: imgBackground._id || data.background_photo
             }).then(newData => {
                 if (newData.name === "Error") {
                     setError(prevError => ({
@@ -104,10 +116,12 @@ const EditUserProfileCommon = (props) => {
         <EditUserProfileCommonBase
             data={data}
             imgAvatar={imgAvatar}
+            imgBackground={imgBackground}
             error={error}
             ChangeData={ChangeData}
             SaveChanges={SaveChanges}
             ChangeFilesAvatar={ChangeFilesAvatar}
+            ChangeFilesBackground={ChangeFilesBackground}
         />
     )
 

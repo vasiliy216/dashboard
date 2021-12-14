@@ -3,15 +3,20 @@ import { StatusUsers } from '../../../components/common'
 
 import './style.scss'
 
-const Tables = () => {
+const Tables = (props) => {
+    
+    const {
+        users
+    } = props
+
     return (
         <>
             <PageHeader subtitle="OVERVIEW" title="Data Tables" />
             <div className="row">
-                <StatusUsers>Active Users</StatusUsers>
+                <StatusUsers users={users} >Active Users</StatusUsers>
             </div>
             <div className="row">
-                <StatusUsers styleDark>Inactive Users</StatusUsers>
+                <StatusUsers users={users} styleDark>Inactive Users</StatusUsers>
             </div>
         </>
     )

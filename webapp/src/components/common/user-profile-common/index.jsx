@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { UserAvatar } from '../../basic'
+import { UserAvatar, UserBackgroundPhoto } from '../../basic'
 import { UserSocial, UserData, UserTags } from '../../basic/user-profile-basic'
 import './style.scss'
 
@@ -13,7 +13,8 @@ const UserProfileCommon = (props) => {
         avatar,
         bio,
         tags,
-        social
+        social,
+        background_photo
     } = props
 
     return (
@@ -21,7 +22,7 @@ const UserProfileCommon = (props) => {
             <div className="card-mrg-all">
                 <div className="user-profile-header">
                     <div className="user-details__img">
-                        <img src="https://designrevision.com/demo/shards-dashboards/images/user-profile/up-user-details-background.jpg" alt="" />
+                        <UserBackgroundPhoto image={background_photo} />
                     </div>
                 </div>
                 <div className="user-profile-body">

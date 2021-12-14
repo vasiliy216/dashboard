@@ -6,13 +6,11 @@ export default class UploadFileController {
         const userId = req.user._id
         const file = req.file
 
-        // console.log(file)
-
         Cloudinary.v2.uploader
             .upload_stream(
                 {
                     resource_type: 'auto',
-                    transformation: {height: 115, width: 115, crop: "fill"}
+                    transformation: {height: 500, width: 500, crop: "fill"}
                 },
                 (error, result) => {
                     if (error || !result) {
@@ -22,7 +20,7 @@ export default class UploadFileController {
                         })
                     }
 
-                    console.log(result)
+                    // console.log(result)
 
                     const fileData = {
                         filename: file.originalname,

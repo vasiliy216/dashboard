@@ -1,6 +1,8 @@
 import mongoose from 'mongoose'
 import { generatorPasswordHash } from '../utility/index.js'
 
+import { differenceInMinutes  } from "date-fns";
+
 const UserSchema = new mongoose.Schema(
     {
         user_name: {
@@ -61,9 +63,6 @@ const UserSchema = new mongoose.Schema(
                 slack: ''
             }
         },
-        // active: {
-        //     type: Boolean
-        // },
         confirmed: {
             type: Boolean,
             default: false
@@ -80,6 +79,11 @@ const UserSchema = new mongoose.Schema(
         timestamps: true
     }
 )
+
+UserSchema.virtual("is_online").get(function () {
+    console.log(differenceInMinutes(new Date(), this.last_seen), this.last_seen, new Date())
+    return differenceInMinutes(new Date(), this.last_seen) < 5;
+});
 
 UserSchema.set("toJSON", {
     virtuals: true,

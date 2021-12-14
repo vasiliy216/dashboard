@@ -1,4 +1,5 @@
 import classNames from 'classnames'
+import find from 'lodash/find'
 import { StatsPanelHeader } from '../../basic'
 
 import './style.scss'
@@ -7,7 +8,7 @@ const StatusUsers = props => {
     
     const {
         styleDark,
-        // title
+        users
     } = props
 
     return (
@@ -30,6 +31,7 @@ const StatusUsers = props => {
                             </tr>
                         </thead>
                         <tbody className="status-users__body">
+
                             <tr>
                                 <th>1</th>
                                 <th>Ali</th>
