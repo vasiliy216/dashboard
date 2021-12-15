@@ -139,7 +139,8 @@ export default class UserController {
         const id = req.user._id;
 
         UserModal
-            .find({_id: {$ne: id}}, 'first_name last_name phone_number')
+            // .find({_id: {$ne: id}}, 'first_name last_name phone_number last_seen')
+            .find({}, 'first_name last_name phone_number last_seen')
             .then(data => res.json(data))
             .catch(err => {
                 return res.status(404).json({

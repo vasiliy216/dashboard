@@ -1,5 +1,5 @@
+import { useState } from 'react'
 import classNames from 'classnames'
-import find from 'lodash/find'
 import { StatsPanelHeader } from '../../basic'
 
 import './style.scss'
@@ -31,39 +31,22 @@ const StatusUsers = props => {
                             </tr>
                         </thead>
                         <tbody className="status-users__body">
-
-                            <tr>
-                                <th>1</th>
-                                <th>Ali</th>
-                                <th>Kerry</th>
-                                <th>Russian Federation</th>
-                                <th>Moskov</th>
-                                <th>107-0339</th>
-                            </tr>
-                            <tr>
-                                <th>2</th>
-                                <th>Ali</th>
-                                <th>Kerry</th>
-                                <th>Russian Federation</th>
-                                <th>Moskov</th>
-                                <th>107-0339</th>
-                            </tr>
-                            <tr>
-                                <th>3</th>
-                                <th>Ali</th>
-                                <th>Kerry</th>
-                                <th>Russian Federation</th>
-                                <th>Moskov</th>
-                                <th>107-0339</th>
-                            </tr>
-                            <tr>
-                                <th>4</th>
-                                <th>Ali</th>
-                                <th>Kerry</th>
-                                <th>Russian Federation</th>
-                                <th>Moskov</th>
-                                <th>107-0339</th>
-                            </tr>
+                            {
+                                users
+                                .filter(i => i.is_online === !styleDark)
+                                .map((data, index) => {
+                                    return (
+                                        <tr key={index}>
+                                            <th>{ index + 1 }</th>
+                                            <th>{ data.first_name || '-' }</th>
+                                            <th>{ data.last_name || '-' }</th>
+                                            <th>Belorus</th>
+                                            <th>Brest</th>
+                                            <th>{ data.phone_number || '-' }</th>
+                                        </tr>
+                                    )
+                                })
+                            }
                         </tbody>
                     </table>
                 </div>

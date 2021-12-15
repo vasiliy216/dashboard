@@ -12,6 +12,7 @@ export { default as ProgressBar } from './progress-bar/index'
 export { default as UserAvatar } from './user-avatar/index'
 export { default as UserBackgroundPhoto } from './user-background-photo/index'
 export { default as LoaderSnipper } from './loader/index'
+export { default as LoaderSnipperPage } from './loader-page/index'
 
 export { default as FullReport} from './button/full-report/index'
 export { default as Buttons} from './button/buttons/index'

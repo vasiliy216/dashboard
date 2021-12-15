@@ -81,7 +81,6 @@ const UserSchema = new mongoose.Schema(
 )
 
 UserSchema.virtual("is_online").get(function () {
-    console.log(differenceInMinutes(new Date(), this.last_seen), this.last_seen, new Date())
     return differenceInMinutes(new Date(), this.last_seen) < 5;
 });
 

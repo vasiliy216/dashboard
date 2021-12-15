@@ -4,13 +4,18 @@ import { userApi } from '../../../utils/api'
 
 const Tables = () => {
     
-    const [users, setUsers] = useState('')
+    const [users, setUsers] = useState([])
+    const [isLoader, setIsLoader] = useState(true)
 
     const fetchUsers = () => {
         userApi
             .getUsers()
-            .then(data => {
-                setUsers(data)
+            .then(r => {
+                const { data } = r;
+                
+                setUsers(prevState => data)
+
+                setIsLoader(prevState => (!prevState))
             })
             .catch()
     }
@@ -22,6 +27,7 @@ const Tables = () => {
     return (
         <TablesBase 
             users={users}
+            isLoader={isLoader}
         />
     )
 }
