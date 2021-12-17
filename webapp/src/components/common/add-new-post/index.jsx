@@ -15,7 +15,10 @@ const AddNewPostCommon = () => {
     return (
         <div className="add-new-post card-p">
             <div className="card-mrg-all card-p-16">
-                <Input placeholder="Your Post Title" className="add-new-post__input" />
+                <Input 
+                    placeholder="Your Post Title" 
+                    className="add-new-post__input" 
+                />
                 <ReactQuill
                     className="add-new-post__editor"
                     placeholder="Words can be like x-rays if you use them properly..."

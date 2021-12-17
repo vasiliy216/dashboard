@@ -3,8 +3,11 @@ import { AddNewPostCoomon, Actions, Categories } from '../../../components/commo
 
 import './style.scss'
 
-const AddNewPost = () => {
+const AddNewPost = (props) => {
 
+    const {
+        
+    } = props
 
     return (
         <>

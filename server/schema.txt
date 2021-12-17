@@ -22,8 +22,8 @@ user:
 - background_photo
 - is_public_email           Boolen
 - bio                       String
-- tags                      {}
-- social                    []
+- tags                      []
+- social                    {}
 - active                    Boolen
 - confirmed                 String
 - confirm_hash              String

@@ -136,7 +136,7 @@ export default class UserController {
     getAll(req, res) {
         // console.log(req.socket.remoteAddress)
 
-        const id = req.user._id;
+        // const id = req.user._id;
 
         UserModal
             // .find({_id: {$ne: id}}, 'first_name last_name phone_number last_seen')
