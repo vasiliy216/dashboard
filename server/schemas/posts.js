@@ -17,8 +17,7 @@ const PostsSchema = new mongoose.Schema(
             ref: "UploadFile",
         },
         user: {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: "User",
+            type: Object,
             required: true
         },
         categories: {

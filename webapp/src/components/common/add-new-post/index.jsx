@@ -3,14 +3,14 @@ import { Input } from 'antd'
 import ReactQuill from 'react-quill'
 import '../../../../node_modules/react-quill/dist/quill.snow.css'
 import './style.scss'
+import { database } from 'faker'
 
-const AddNewPostCommon = () => {
+const AddNewPostCommon = (props) => {
 
-    const [body, setBody] = useState('');
-
-    const handleBody = e => {
-        setBody(e)
-    }
+    const {
+        data,
+        ChangeData
+    } = props
 
     return (
         <div className="add-new-post card-p">
@@ -18,14 +18,16 @@ const AddNewPostCommon = () => {
                 <Input 
                     placeholder="Your Post Title" 
                     className="add-new-post__input" 
+                    value={data.title}
+                    onChange={e => ChangeData({...data, title: e.target.value})}
                 />
                 <ReactQuill
                     className="add-new-post__editor"
                     placeholder="Words can be like x-rays if you use them properly..."
                     modules={modules}
                     formats={formats}
-                    onChange={handleBody}
-                    value={body}
+                    value={data.text}
+                    onChange={body => ChangeData({...data, text: body})}
                 />
             </div>
         </div>

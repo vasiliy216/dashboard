@@ -6,7 +6,7 @@ import { OpenNotification } from '../../../utils/helpers'
 import { AddNewPost as AddNewPostBase } from '../../../pages/prepage'
 
 const AddNewPost = (props) => {
-    
+
     const {
 
     } = props
@@ -14,17 +14,51 @@ const AddNewPost = (props) => {
     const [data, setData] = useState({
         text: "",
         title: "",
-        image: "",
-        user: "",
         categories: [],
         status: true,
         visibility: true,
-        schedule: ""
+        // schedule: ""
     })
 
-    return (
-        <AddNewPostBase 
+    const ChangeData = (value) => {
+        setData(value)
+    }
 
+    const SendData = () => {
+        postApi
+            .create(data)
+            .then(newData => {
+                
+                const { data } = newData;
+
+                OpenNotification({
+                    type: data.status,
+                    text: data.message
+                })
+                
+                setData(prevData => ({
+                    ...prevData,
+                    categories: [],
+                    schedule: "",
+                    text: "",
+                    title: "",
+                    image: ""
+                }))
+
+            })
+            .catch(error => {
+                OpenNotification({
+                    type: error.status,
+                    text: error.message
+                })
+            })
+    }
+
+    return (
+        <AddNewPostBase
+            data={data}
+            ChangeData={ChangeData}
+            SendData={SendData}
         />
     )
 }

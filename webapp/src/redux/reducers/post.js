@@ -4,12 +4,12 @@ const initState = {
 
 export default (state = initState, { type, payload }) => {
     switch (type) {
-        case "POSTS:SET_ITEMS" :
+        case "POSTS:SET_ITEMS":
             return {
                 ...state,
                 items: payload
             }
-        
-        
+        default:
+            return state
     }
 }

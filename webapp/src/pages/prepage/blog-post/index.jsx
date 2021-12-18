@@ -1,9 +1,16 @@
-import { PageHeader, BlogPostBasic } from '../../../components/basic'
-import Blog from './bd.json'
+import { PageHeader, BlogPostBasic, LoaderSnipperPage } from '../../../components/basic'
+// import Blog from './bd.json'
+import orderBy from 'lodash/orderBy'
 
 import './style.scss'
 
-const BlogPost = () => {
+const BlogPost = (props) => {
+
+    const {
+       items 
+    } = props
+
+    
 
     return (
         <>
@@ -11,7 +18,7 @@ const BlogPost = () => {
             <div className="row">
                 <div></div>
                 {
-                    Blog.map((item, index) => {
+                    orderBy(items, ['updatedAt'], ['desc']).map((item, index) => {
                         return (
                             <BlogPostBasic {...item} key={index}/>
                         )

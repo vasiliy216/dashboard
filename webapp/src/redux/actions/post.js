@@ -7,10 +7,23 @@ const actions = {
         payload: items
     }),
     fetchPosts: () => dispatch => {
-        postApi.getAll().then(({ data }) => {
-            dispatch(actions.setPosts(data))
-        })
-    } 
+        return postApi
+            .getAll()
+            .then(({ data }) => {
+                dispatch(actions.setPosts(data))
+
+                return data
+            })
+            .catch(err => {
+
+                OpenNotification({
+                    type: err.status,
+                    text: err.message
+                })
+
+                return new Error(err);
+            })
+    }
 }
 
 export default actions

@@ -46,7 +46,7 @@ const EditUserProfileCommon = (props) => {
     //кастыль
     const ChangeFilesAvatar = async file => {
         await filesApi
-            .upload(file[0])
+            .upload(file[0], 300, 300)
             .then(result => {
 
                 const { file } = result.data
@@ -59,7 +59,7 @@ const EditUserProfileCommon = (props) => {
 
     const ChangeFilesBackground = async file => {
         await filesApi
-            .upload(file[0])
+            .upload(file[0], 800, 300)
             .then(result => {
                 const { file } = result.data
 

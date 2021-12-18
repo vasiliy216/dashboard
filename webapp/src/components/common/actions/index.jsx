@@ -4,8 +4,13 @@ import { Buttons, StatsPanelHeader } from '../../basic'
 
 import './style.scss'
 
-const Actions = () => {
+const Actions = (props) => {
 
+    const {
+        data,
+        ChangeData,
+        SendData
+    } = props
 
     return (
         <div className="actions">
@@ -35,7 +40,7 @@ const Actions = () => {
                     <Buttons outline primary>
                         <i className="fas fa-save"></i> Save Draft
                     </Buttons>
-                    <Buttons primary>
+                    <Buttons primary onClick={SendData}>
                         <i className="fas fa-copy"></i> Publish
                     </Buttons>
                 </div>
