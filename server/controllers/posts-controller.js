@@ -1,6 +1,11 @@
 import { PostsModal, UserModal } from '../schemas/index.js'
 
 export default class PostsController {
+
+    constructor(io) {
+        this.io = io;
+    }
+
     create(req, res) {
 
         UserModal
@@ -16,25 +21,27 @@ export default class PostsController {
                     }
                 }
 
-                const Posts = new PostsModal(PostData)  
-                
+                const Posts = new PostsModal(PostData)
+
                 Posts
-                .save()
-                .then((data, err) => {
-    
-                    if (err) {
-                        return res.status(403).json({
-                            status: "error",
-                            message: "Something went wrong.",
-                            err
+                    .save()
+                    .then((data, err) => {
+
+                        if (err) {
+                            return res.status(403).json({
+                                status: "error",
+                                message: "Something went wrong.",
+                                err
+                            })
+                        }
+
+                        res.status(200).json({
+                            status: "success",
+                            message: "Great, your post has been successfully published."
                         })
-                    }
-    
-                    res.status(200).json({
-                        status: "success",
-                        message: "Great, your post has been successfully published."
+
+                        this.io.emit("SERVER:NEW_POSTS", "Hello. Im socket :)")
                     })
-                })    
             })
 
     }
@@ -54,6 +61,36 @@ export default class PostsController {
             })
     }
     delete(req, res) {
+
+    }
+    find(req, res) {
+        const user_id = req.params.id;
+
+        UserModal
+            .findById(user_id, (err, user) => {
+                if (err || !user) {
+                    return res.status(403).json({
+                        message: "User not found."
+                    })
+                }
+
+                PostsModal
+                    .find({ "user._id": user._id })
+                    .limit(10)
+                    .populate('image')
+                    .exec((err, posts) => {
+
+                        if (err || !posts) {
+                            return res.status(403).json({
+                                status: "error",
+                                message: "Posts not found."
+                            })
+                        }
+                        
+                        res.json(posts)
+                    })
+
+            })
 
     }
 }

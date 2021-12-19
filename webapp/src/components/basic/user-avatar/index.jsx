@@ -4,7 +4,7 @@ const UserAvatar = ({ userAvatar }) => {
 
     if (userAvatar) {
         return (
-            <img className="user-avatar" src={userAvatar.url} alt={userAvatar.filename} />
+            <img className="user-avatar" src={userAvatar.url || userAvatar} alt={userAvatar.filename} />
         )
     } else {
         return (

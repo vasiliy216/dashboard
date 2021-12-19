@@ -58,3 +58,25 @@
     border-color: #007bff;
     color: #007bff;
 }
+
+.btn-royal-blue {
+    color: #fff;
+    border-color: #674eec;
+    background-color: #674eec;
+    box-shadow: none;
+
+    &:hover {
+        color: #fff;
+        background-color: #5337ea;
+        border-color: #5337ea;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, .05), 0 4px 10px rgba(103, 78, 236, .25);
+    }
+
+    &:active {
+        color: #fff;
+        background-color: #5337ea;
+        border-color: #3f20e7;
+        background-image: none;
+        box-shadow: inset 0 3px 5px rgba(0,0,0,.125)!important;
+    }
+}

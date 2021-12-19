@@ -1,8 +1,9 @@
 import classNames from 'classnames';
 import { Link } from 'react-router-dom'
 import format from 'date-fns/format'
-import '../../../../node_modules/react-quill/dist/quill.snow.css'
 import './style.scss'
+
+import { EmptyUserAvatarLink } from '../../basic'
 
 const BlogPostBasic = props => {
 
@@ -15,6 +16,7 @@ const BlogPostBasic = props => {
         visibility,
         title,
         text,
+        PopUpWindow
     } = props;
 
     return (
@@ -27,35 +29,34 @@ const BlogPostBasic = props => {
             })}>
                 {image &&
                     <div className="blog-post__header"
-                        style={{ backgroundImage: 'url('+ image +')' }}>
+                        style={{ backgroundImage: 'url(' + image + ')' }}>
                         <Link to="*" className="plog-post__category bg-dark">
-                            { categories }
+                            {categories}
                         </Link>
                         <div className="blog-post__author">
-                            <Link to="*"
-                                className="blog-post__author-avatar"
-                                style={{ backgroundImage: 'url('+ user.avatar +')'}}
-                            ></Link>
+                            <EmptyUserAvatarLink image={user.avatar} />
                         </div>
                     </div>
                 }
                 <div className="blog-post__body card-blg">
                     <h5>
-                        <Link to="*">{ title }</Link>
+                        <div
+                            className='blog-post__body-title'
+                            onClick={PopUpWindow.bind(this, user._id)}
+                        >
+                            { title }
+                        </div>
                     </h5>
-                    <p className="ql-editor" dangerouslySetInnerHTML={{__html: text}}></p>
-                    {image && <span>{ format(new Date(schedule), 'dd MMMM yyyy') }</span>}
+                    <p className="ql-editor" dangerouslySetInnerHTML={{ __html: text }}></p>
+                    {image && <span>{format(new Date(schedule), 'dd MMMM yyyy')}</span>}
                 </div>
                 {!image &&
                     <div className="blog-post__footer">
                         <div className="blog-post__author">
-                            <Link to="*"
-                                className="blog-post__author-avatar"
-                                style={{ backgroundImage: 'url('+ user.avatar +')'}}
-                            ></Link>
+                            <EmptyUserAvatarLink image={user.avatar} />
                             <div className="blog-post__author-name">
-                                <span>{ user.user_name }</span>
-                                <small>{ format(new Date(schedule), 'dd MMMM yyyy') }</small>
+                                <span>{user.user_name}</span>
+                                <small>{format(new Date(schedule), 'dd MMMM yyyy')}</small>
                             </div>
                         </div>
                     </div>

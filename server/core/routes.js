@@ -15,7 +15,7 @@ const createRoutes = (app, io) => {
 
     const User = new UserController();
     const File = new UploadFileController();
-    const Posts = new PostsController();
+    const Posts = new PostsController(io);
 
     app.get('/user/all', User.getAll)
     
@@ -26,7 +26,8 @@ const createRoutes = (app, io) => {
     app.post('/account/login', loginValidation, User.login);
 
     app.get('/post', Posts.getPosts)
-    app.post('/post', Posts.create)
+    app.get('/post/:id', (req, res) => Posts.find(req, res))
+    app.post('/post', (req, res) => Posts.create(req, res))
     app.delete('/post/:id')
 
     app.post('/file', Multer.single('file'), File.create)

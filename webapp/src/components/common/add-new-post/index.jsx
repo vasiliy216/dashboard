@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import { Input } from 'antd'
 import ReactQuill from 'react-quill'
-import '../../../../node_modules/react-quill/dist/quill.snow.css'
 import './style.scss'
 import { database } from 'faker'
 

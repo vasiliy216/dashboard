@@ -9,8 +9,13 @@ export { default as FooterNavItem } from './footer-nav-item/index'
 export { default as TopRefferalsItem } from './top-refferals-item/index'
 export { default as BlogPostBasic } from './blog-post-basic/index'
 export { default as ProgressBar } from './progress-bar/index'
+
+export { default as NewEntries } from './new-entries/index'
+
 export { default as UserAvatar } from './user-avatar/index'
+export { default as EmptyUserAvatarLink } from './empty-user-avatar-link/index'
 export { default as UserBackgroundPhoto } from './user-background-photo/index'
+
 export { default as LoaderSnipper } from './loader/index'
 export { default as LoaderSnipperPage } from './loader-page/index'
 
