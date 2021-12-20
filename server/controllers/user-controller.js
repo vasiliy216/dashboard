@@ -1,7 +1,7 @@
 import { UserModal } from '../schemas/index.js'
 import { validationResult } from 'express-validator'
 import { createJwtToken } from '../utility/index.js'
-import { generatorPasswordHash } from '../utility/index.js'
+import { Mailer } from '../core/index.js'
 import bcrypt from 'bcrypt'
 
 export default class UserController {
@@ -32,6 +32,18 @@ export default class UserController {
                 .save()
                 .then(data => {
                     res.json(data)
+                    // Mailer.sendMail({
+                    //     from: "admin@test.com",
+                    //     to: PostData.email,
+                    //     subject: "Подтверждение почты Shards Dashboard",
+                    //     html: `Для того, чтобы подтвердить почту, перейдите <a href="http://localhost:3000/register/verify?hash=${data.confirm_hash}">по этой ссылке</a>`,
+                    // }, (err, info) => {
+                    //     if (err) {
+                    //         console.log(err);
+                    //     } else {
+                    //         console.log(info);
+                    //     }
+                    // })
                 })
                 .catch(err => {
                     res.json({
@@ -62,7 +74,7 @@ export default class UserController {
                 if (PostData.new_password && PostData.old_password) {
 
                     if (bcrypt.compareSync(PostData.old_password, data.password)) {
-                        data.password = PostData.new_password;      
+                        data.password = PostData.new_password;
                     } else {
                         return res.status(403).json({
                             status: "error",
