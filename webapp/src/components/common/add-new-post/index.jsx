@@ -56,7 +56,7 @@ const formats = [
     "list",
     "bullet",
     "code-block",
-    "script"
+    "script",
 ]
 
 export default AddNewPostCommon

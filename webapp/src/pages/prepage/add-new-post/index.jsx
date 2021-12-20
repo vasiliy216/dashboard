@@ -8,7 +8,9 @@ const AddNewPost = (props) => {
     const {
         data,
         ChangeData,
-        SendData
+        SendData,
+        DisabledDate,
+        ChangeDate
     } = props
 
     return (
@@ -24,6 +26,8 @@ const AddNewPost = (props) => {
                         data={data}
                         ChangeData={ChangeData}
                         SendData={SendData}
+                        DisabledDate={DisabledDate}
+                        ChangeDate={ChangeDate}
                     />
                     <Categories
                         data={data}

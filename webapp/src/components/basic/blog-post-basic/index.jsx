@@ -16,7 +16,8 @@ const BlogPostBasic = props => {
         visibility,
         title,
         text,
-        PopUpWindow
+        PopUpWindow,
+        _id
     } = props;
 
     return (
@@ -42,7 +43,7 @@ const BlogPostBasic = props => {
                     <h5>
                         <div
                             className='blog-post__body-title'
-                            onClick={PopUpWindow.bind(this, user._id)}
+                            onClick={PopUpWindow.bind(this, {post_id: _id, user_id: user._id})}
                         >
                             { title }
                         </div>

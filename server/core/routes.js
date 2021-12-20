@@ -26,7 +26,7 @@ const createRoutes = (app, io) => {
     app.post('/account/login', loginValidation, User.login);
 
     app.get('/post', Posts.getPosts)
-    app.get('/post/:id', (req, res) => Posts.find(req, res))
+    app.get('/post/user', (req, res) => Posts.find(req, res))
     app.post('/post', (req, res) => Posts.create(req, res))
     app.delete('/post/:id')
 

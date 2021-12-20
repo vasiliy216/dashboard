@@ -1,5 +1,6 @@
 import { useState } from 'react'
-import { connect } from 'react-redux'
+// import { connect } from 'react-redux'
+import moment from 'moment';
 import { postApi } from '../../../utils/api'
 import { OpenNotification } from '../../../utils/helpers'
 
@@ -17,25 +18,37 @@ const AddNewPost = (props) => {
         categories: [],
         status: true,
         visibility: true,
-        // schedule: ""
+        schedule: new Date()
     })
 
-    const ChangeData = (value) => {
+    const ChangeData = value => {
         setData(value)
+    }
+
+    const DisabledDate = (current) => {
+        // Can not select days before today and today
+        return current && current < moment().endOf('day');
+    }
+
+    const ChangeDate = date => {
+
+        const date_d = date ? date._d : new Date()
+
+        setData(prevState => ({ ...prevState, schedule: date_d }))
     }
 
     const SendData = () => {
         postApi
             .create(data)
             .then(newData => {
-                
+
                 const { data } = newData;
 
                 OpenNotification({
                     type: data.status,
                     text: data.message
                 })
-                
+
                 setData(prevData => ({
                     ...prevData,
                     categories: [],
@@ -59,6 +72,8 @@ const AddNewPost = (props) => {
             data={data}
             ChangeData={ChangeData}
             SendData={SendData}
+            DisabledDate={DisabledDate}
+            ChangeDate={ChangeDate}
         />
     )
 }

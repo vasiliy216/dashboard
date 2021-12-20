@@ -47,7 +47,7 @@ export default class PostsController {
     }
     getPosts(req, res) {
         PostsModal
-            .find()
+            .find({ is_show: true })
             .populate('user image')
             .exec((err, post) => {
 
@@ -64,7 +64,8 @@ export default class PostsController {
 
     }
     find(req, res) {
-        const user_id = req.params.id;
+        const post_id = req.query.post_id;
+        const user_id = req.query.user_id;
 
         UserModal
             .findById(user_id, (err, user) => {
@@ -75,8 +76,7 @@ export default class PostsController {
                 }
 
                 PostsModal
-                    .find({ "user._id": user._id })
-                    .limit(10)
+                    .find({"user._id": user._id, is_show: true })
                     .populate('image')
                     .exec((err, posts) => {
 
@@ -87,7 +87,10 @@ export default class PostsController {
                             })
                         }
                         
-                        res.json(posts)
+                        res.json({
+                            currentPostId: post_id,
+                            items: posts
+                        })
                     })
 
             })

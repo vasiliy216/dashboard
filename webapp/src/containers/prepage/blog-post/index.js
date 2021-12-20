@@ -31,15 +31,20 @@ const BlogPost = (props) => {
     }
 
     const ClossPopUpWindow = e => {
-        console.log(e.path)
-        // if (!e.path.includes(PopUpRef.current)) {
-        //     setItemsUser(null)
-        // }
+        if (!e.path.includes(PopUpRef.current)) {
+            setItemsUser([])
+        }
     }
 
-    const PopUpWindow = user_id => {
+    const PopUpWindow = data => {
+
+        const {
+            post_id,
+            user_id
+        } = data
+
         postApi
-            .getPostsUser(user_id)
+            .getPostsUser(post_id, user_id)
             .then(newData => {
                 const { data } = newData;
                 setItemsUser(data)
@@ -61,6 +66,8 @@ const BlogPost = (props) => {
 
         return () => {
             Socket.removeListener("SERVER:NEW_POSTS")
+
+            document.body.removeEventListener('click', ClossPopUpWindow);
         }
 
     }, [])
