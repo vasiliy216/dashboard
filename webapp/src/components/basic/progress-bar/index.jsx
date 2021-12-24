@@ -2,7 +2,6 @@ import './style.scss'
 
 const ProgressBar = props => {
 
-
     return (
         <div className="user-tasks-footer__progress">
             <div className="progress-wrapper">

@@ -2,8 +2,11 @@ import { ProgressBar } from '../../basic'
 
 import './style.scss'
 
-const UserTasks = () => {
+const UserTasks = (props) => {
 
+    const {
+        Performance
+    } = props
 
     return (
         <div className="user-tasks">
@@ -31,7 +34,7 @@ const UserTasks = () => {
                 <div className="user-tasks-footer">
                     <div className="row">
                         <ProgressBar width='80%'>Workload</ProgressBar>
-                        <ProgressBar width='92%'>Performance</ProgressBar>
+                        <ProgressBar width={Performance + '%'}>Performance</ProgressBar>
                     </div>
                 </div>
             </div>

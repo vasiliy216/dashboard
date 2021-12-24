@@ -11,9 +11,28 @@ const UserProfile = (props) => {
         user
     } = props
 
+    const data = [
+        'first_name',
+        'last_name',
+        'email',
+        'location',
+        'phone_number',
+        'background_photo',
+        'bio',
+        'tags',
+        'social',
+    ]
+
+    const value = data.reduce((prevValue, item) => {
+        return !!user[item] ? prevValue + 1 : prevValue + 0;
+    }, 0)
+
+    const Performance = Math.round(value * 100 / data.length)
+
     return (
         <UserProfileBase
             user={user}
+            Performance={Performance}
         />
     )
 }

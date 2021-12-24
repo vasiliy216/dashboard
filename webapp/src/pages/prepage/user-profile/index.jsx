@@ -5,7 +5,8 @@ import './style.scss'
 const UserProfile = (props) => {
 
     const {
-        user
+        user,
+        Performance
     } = props
 
     return (
@@ -16,7 +17,7 @@ const UserProfile = (props) => {
                     <SendMessage />
                 </div>
                 <div className="user-profile-right card-p">
-                    <UserTasks />
+                    <UserTasks Performance={Performance} />
                     <WeeklyPerformanceReport />
                 </div>
             </div>

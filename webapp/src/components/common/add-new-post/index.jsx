@@ -1,8 +1,6 @@
-import { useState } from 'react'
 import { Input } from 'antd'
 import ReactQuill from 'react-quill'
 import './style.scss'
-import { database } from 'faker'
 
 const AddNewPostCommon = (props) => {
 
