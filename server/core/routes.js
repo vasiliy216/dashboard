@@ -18,6 +18,7 @@ const createRoutes = (app, io) => {
     const Posts = new PostsController(io);
 
     app.get('/user/all', User.getAll)
+    app.get('/user', User.find)
     
     app.get('/user/im', User.getIm)
     app.put('/user/update', User.update)

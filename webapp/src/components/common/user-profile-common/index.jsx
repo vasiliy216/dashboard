@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom'
 import { UserAvatar, UserBackgroundPhoto } from '../../basic'
 import { UserSocial, UserData, UserTags } from '../../basic/user-profile-basic'
 import './style.scss'

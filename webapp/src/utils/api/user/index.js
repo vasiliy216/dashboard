@@ -6,4 +6,5 @@ export default {
     getim: () => Axios.get('/user/im'),
     update: postData => Axios.put('/user/update', postData),
     getUsers: () => Axios.get('/user/all'),
+    getUser: userId => Axios.get('/user?user_id=' + userId)
 }

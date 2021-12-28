@@ -14,6 +14,7 @@ const EditUserProfileCommon = (props) => {
     } = props
 
     const [data, setData] = useState({
+        link: user.link || user._id,
         user_name: user.user_name,
         first_name: user.first_name,
         last_name: user.last_name,

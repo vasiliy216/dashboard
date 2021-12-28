@@ -4,7 +4,11 @@ import { useNavigate } from 'react-router-dom'
 
 import './style.scss'
 
-const Menu = () => {
+const Menu = (props) => {
+
+    const {
+        user
+    } = props
 
     const menu = [{
         link: 'blog-dashboard',
@@ -45,13 +49,43 @@ const Menu = () => {
             </div>
             <div className="main-sidebar__wrapper">
                 <ul className="nav-wrapper">
-                    {menu.map((item, index) => {
+                    {/* {menu.map((item, index) => {
                         return (
                             <NavItem {...item}
                                 key={index}
                             />
                         )
-                    })}
+                    })} */}
+                    <NavItem
+                        link='blog-dashboard'
+                        icon='fas fa-pencil-alt'
+                    >
+                        Blog Dashboard
+                    </NavItem>
+                    <NavItem
+                        link='blog-post'
+                        icon='fas fa-th-large'
+                    >
+                        Blog Posts
+                    </NavItem>
+                    <NavItem
+                        link='add-new-post'
+                        icon='fas fa-folder-plus'
+                    >
+                        Add New Post
+                    </NavItem>
+                    <NavItem
+                        link='tables'
+                        icon='fas fa-table'
+                    >
+                        Tables
+                    </NavItem>
+                    <NavItem
+                        link={user.link || user._id}
+                        icon='fas fa-user'
+                    >
+                        User Account
+                    </NavItem>
                 </ul>
             </div>
         </div>

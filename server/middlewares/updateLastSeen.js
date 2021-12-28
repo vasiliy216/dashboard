@@ -5,7 +5,7 @@ const updateLastSeen = (req, res, next) => {
         UserModal.updateOne(
             { _id: req.user._id },
             { last_seen: new Date() },
-            () => { } // Без колбэка не работает :(
+            () => {}
         );
     }
     next();

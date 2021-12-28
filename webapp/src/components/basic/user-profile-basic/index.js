@@ -1,3 +1,3 @@
-export { default as UserSocial } from './social'
-export { default as UserData } from './data'
-export { default as UserTags } from './tags'
+export { default as UserSocial } from './social/index'
+export { default as UserData } from './data/index'
+export { default as UserTags } from './tags/index'

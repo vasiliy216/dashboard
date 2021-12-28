@@ -1,5 +1,5 @@
 import { Buttons } from '../../basic'
-import { General, Social, ChangePassword, Header } from '../../basic/edit-user-profile-basic'
+import { General, Social, ChangePassword, Header, PageAddress } from '../../basic/edit-user-profile-basic'
 
 import './style.scss'
 
@@ -35,6 +35,8 @@ const EditUserProfileCommon = (props) => {
                         />
                         <hr />
                         <Social ChangeData={ChangeData} data={data} />
+                        <hr />
+                        <PageAddress ChangeData={ChangeData} data={data} />
                         <hr />
                         <ChangePassword ChangeData={ChangeData} data={data} error={error} />
                     </div>

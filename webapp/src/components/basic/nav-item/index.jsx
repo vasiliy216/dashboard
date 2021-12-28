@@ -6,7 +6,6 @@ const NavItem = props => {
 
     const {
         link,
-        navName,
         icon
     } = props;
 
@@ -19,7 +18,7 @@ const NavItem = props => {
                     (link === "blog-dashboard" && window.location.pathname === "/")
             })}>
                 <i className={icon}></i>
-                <span>{navName}</span>
+                <span>{props.children}</span>
             </Link>
         </li>
     )

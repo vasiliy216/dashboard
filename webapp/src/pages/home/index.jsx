@@ -1,6 +1,6 @@
-import { Menu, Body, Footer } from '../../components/section'
+import { Body, Footer } from '../../components/section'
 import { LoaderSnipper } from '../../components/basic'
-import { Header } from '../../containers/section'
+import { Header, Menu } from '../../containers/section'
 import { connect } from 'react-redux';
 
 import './style.scss'

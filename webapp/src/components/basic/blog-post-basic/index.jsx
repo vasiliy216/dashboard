@@ -35,7 +35,10 @@ const BlogPostBasic = props => {
                             {categories}
                         </Link>
                         <div className="blog-post__author">
-                            <EmptyUserAvatarLink image={user.avatar} />
+                            <EmptyUserAvatarLink
+                                image={user.avatar}
+                                userId={user._id}
+                            />
                         </div>
                     </div>
                 }
@@ -43,9 +46,9 @@ const BlogPostBasic = props => {
                     <h5>
                         <div
                             className='blog-post__body-title'
-                            onClick={PopUpWindow.bind(this, {post_id: _id, user_id: user._id})}
+                            onClick={PopUpWindow.bind(this, { post_id: _id, user_id: user._id })}
                         >
-                            { title }
+                            {title}
                         </div>
                     </h5>
                     <p className="ql-editor" dangerouslySetInnerHTML={{ __html: text }}></p>
@@ -54,7 +57,10 @@ const BlogPostBasic = props => {
                 {!image &&
                     <div className="blog-post__footer">
                         <div className="blog-post__author">
-                            <EmptyUserAvatarLink image={user.avatar} />
+                            <EmptyUserAvatarLink
+                                image={user.avatar}
+                                userId={user._id}
+                            />
                             <div className="blog-post__author-name">
                                 <span>{user.user_name}</span>
                                 <small>{format(new Date(schedule), 'dd MMMM yyyy')}</small>
