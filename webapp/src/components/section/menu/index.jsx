@@ -10,28 +10,6 @@ const Menu = (props) => {
         user
     } = props
 
-    const menu = [{
-        link: 'blog-dashboard',
-        navName: 'Blog Dashboard',
-        icon: 'fas fa-pencil-alt'
-    }, {
-        link: 'blog-post',
-        navName: 'Blog Posts',
-        icon: 'fas fa-th-large'
-    }, {
-        link: 'add-new-post',
-        navName: 'Add New Post',
-        icon: 'fas fa-folder-plus'
-    }, {
-        link: 'tables',
-        navName: 'Tables',
-        icon: 'fas fa-table'
-    }, {
-        link: 'user-profile',
-        navName: 'User Account',
-        icon: 'fas fa-user'
-    }]
-
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -49,13 +27,6 @@ const Menu = (props) => {
             </div>
             <div className="main-sidebar__wrapper">
                 <ul className="nav-wrapper">
-                    {/* {menu.map((item, index) => {
-                        return (
-                            <NavItem {...item}
-                                key={index}
-                            />
-                        )
-                    })} */}
                     <NavItem
                         link='blog-dashboard'
                         icon='fas fa-pencil-alt'
@@ -81,7 +52,7 @@ const Menu = (props) => {
                         Tables
                     </NavItem>
                     <NavItem
-                        link={user.link || user._id}
+                        link={(user.link || user._id) + ''}
                         icon='fas fa-user'
                     >
                         User Account

@@ -29,15 +29,15 @@ const UserProfile = (props) => {
         'social',
     ]
 
-    const curretnUserId = window.location.pathname.slice(1)
+    const curretnUserLink = window.location.pathname.slice(1)
 
     //переделать
     useEffect(() => {
         setIsLoader(true)
 
-        if (curretnUserId !== user._id) {
+        if (curretnUserLink !== user._id) {
             userApi
-                .getUser(curretnUserId)
+                .getUser(curretnUserLink)
                 .then(({ data }) => {
                     setItem(prevState => data)      
                     

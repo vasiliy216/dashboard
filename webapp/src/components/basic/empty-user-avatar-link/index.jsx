@@ -5,19 +5,19 @@ const EmptyUserAvatarLink = (props) => {
 
     const {
         image,
-        userId
+        userLink
     } = props
 
     if (image) {
         return (
-            <Link to={"/" + userId}
+            <Link to={"/" + userLink}
                 className="blog-post__author-avatar"
                 style={{ backgroundImage: 'url(' + image + ')' }}
             ></Link>
         )
     } else {
         return (
-            <Link to={"/" + userId}>
+            <Link to={"/" + userLink}>
                 <UserAvatar />
             </Link>
         )

@@ -88,7 +88,8 @@ const EditUserProfileCommon = (props) => {
                 ...data,
                 user_name: data.first_name + " " + data.last_name,
                 avatar: imgAvatar._id || data.avatar,
-                background_photo: imgBackground._id || data.background_photo
+                background_photo: imgBackground._id || data.background_photo,
+                link: data.link || user._id
             }).then(newData => {
                 if (newData.name === "Error") {
                     setError(prevError => ({

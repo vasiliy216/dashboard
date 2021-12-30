@@ -9,7 +9,7 @@ export default class PostsController {
     create(req, res) {
 
         UserModal
-            .findById(req.user._id, 'user_name avatar id')
+            .findById(req.user._id, 'user_name avatar id link')
             .populate('avatar')
             .exec((err, data) => {
 

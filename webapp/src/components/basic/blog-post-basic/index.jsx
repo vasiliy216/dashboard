@@ -12,13 +12,15 @@ const BlogPostBasic = props => {
         schedule,
         image,
         user,
-        status,
-        visibility,
+        // status,
+        // visibility,
         title,
         text,
         PopUpWindow,
         _id
     } = props;
+
+    console.log(user)
 
     return (
         <div className="blog-post card-p quill">
@@ -37,7 +39,7 @@ const BlogPostBasic = props => {
                         <div className="blog-post__author">
                             <EmptyUserAvatarLink
                                 image={user.avatar}
-                                userId={user._id}
+                                userLink={user.link || user._id}
                             />
                         </div>
                     </div>
@@ -59,7 +61,7 @@ const BlogPostBasic = props => {
                         <div className="blog-post__author">
                             <EmptyUserAvatarLink
                                 image={user.avatar}
-                                userId={user._id}
+                                userLink={user.link || user._id}
                             />
                             <div className="blog-post__author-name">
                                 <span>{user.user_name}</span>

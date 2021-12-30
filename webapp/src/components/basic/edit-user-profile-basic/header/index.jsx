@@ -5,7 +5,6 @@ import './style.scss'
 const Header = (props) => {
 
     const {
-        ChangeData,
         backgroundPhoto,
         imgBackground,
         ChangeFilesBackground

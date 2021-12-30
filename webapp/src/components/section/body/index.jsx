@@ -4,8 +4,6 @@ import { Route, Routes } from 'react-router-dom'
 import { BlogDashboard, EditUserProfile } from '../../../pages/prepage'
 import { UserProfile, Tables, AddNewPost, BlogPost } from '../../../containers/prepage'
 
-import { Errors } from '../../common/'
-
 import './style.scss'
 
 const Body = () => {

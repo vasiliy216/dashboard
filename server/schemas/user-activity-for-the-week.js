@@ -54,6 +54,6 @@ ActivityUserSchema.set("toJSON", {
     virtuals: true,
 });
 
-const AvtivityUserModal = mongoose.model('AvtivityUser', ActivityUserSchema);
+const ActivityUserModal = mongoose.model('ActivityUser', ActivityUserSchema);
 
-export default AvtivityUserModal;
+export default ActivityUserModal;

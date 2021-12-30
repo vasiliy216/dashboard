@@ -1,4 +1,4 @@
-import { useState } from 'react'
+// import { useState } from 'react'
 import { Select } from 'antd'
 
 import './style.scss'
@@ -6,7 +6,7 @@ import './style.scss'
 const SelectBasic = (props) => {
 
     const {
-        options
+        // options
     } = props
 
     const { Option } = Select;

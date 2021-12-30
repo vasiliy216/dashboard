@@ -20,7 +20,6 @@ const EditUserProfileCommon = (props) => {
         <div className="edit-user-profile card-p">
             <div className="card-mrg-all">
                 <Header 
-                    ChangeData={ChangeData}
                     backgroundPhoto={data.background_photo}
                     imgBackground={imgBackground}
                     ChangeFilesBackground={ChangeFilesBackground}    

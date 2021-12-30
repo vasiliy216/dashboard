@@ -8,9 +8,7 @@ const PageAddress = (props) => {
         ChangeData
     } = props
 
-    console.log(data)
-
-    const link = window.location.origin + '/'
+    const location = window.location.origin + '/'
 
     return (
         <>
@@ -24,7 +22,7 @@ const PageAddress = (props) => {
                 <div className="form-group w-100 flex-100">
                     <Input
                         className="form-control"
-                        prefix={link}
+                        prefix={location}
                         value={data.link}
                         onChange={e => ChangeData({ ...data, link: e.target.value })}
                     />

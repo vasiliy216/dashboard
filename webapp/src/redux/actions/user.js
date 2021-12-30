@@ -28,26 +28,26 @@ const actions = {
         delete window.localStorage.token;
     },
     fetchUserUpdate: postData => dispatch => {
-        return userApi.update(postData).then(({ data }) => {
-            const {
-                token,
-                status,
-                message
-            } = data;
+        return userApi.update(postData)
+            .then(({ data }) => {
+                const {
+                    token,
+                    status,
+                    message
+                } = data;
 
-            window.localStorage['token'] = token;
-            window.axios.defaults.headers.common["token"] = token;
+                window.localStorage['token'] = token;
+                window.axios.defaults.headers.common["token"] = token;
 
-            dispatch(actions.fetchUserData());
-            dispatch(actions.setUserData(data));
+                dispatch(actions.fetchUserData());
 
-            OpenNotification({
-                type: status,
-                text: message
+                OpenNotification({
+                    type: status,
+                    text: message
+                })
+
+                return data;
             })
-
-            return data;
-        })
             .catch(err => {
 
                 OpenNotification({

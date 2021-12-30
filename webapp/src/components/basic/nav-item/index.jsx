@@ -9,13 +9,14 @@ const NavItem = props => {
         icon
     } = props;
 
+    const currentLink = link === window.location.pathname.slice(1)
+    const isDashboard = link === "blog-dashboard" && window.location.pathname === "/"
+
     return (
         <li className="nav nav-item">
             <Link to={link} className={classNames({
                 'nav nav-item-wrapper': true,
-                'active': link === window.location.pathname.slice(1) ||
-                    window.location.pathname.slice(1) === (link + "/edit") ||
-                    (link === "blog-dashboard" && window.location.pathname === "/")
+                'active': currentLink || isDashboard
             })}>
                 <i className={icon}></i>
                 <span>{props.children}</span>

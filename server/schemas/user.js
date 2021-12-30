@@ -63,6 +63,10 @@ const UserSchema = new mongoose.Schema(
                 slack: ''
             }
         },
+        link: {
+            type: String,
+            default: ''
+        },
         confirmed: {
             type: Boolean,
             default: false

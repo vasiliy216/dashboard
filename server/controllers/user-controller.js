@@ -5,10 +5,10 @@ import bcrypt from 'bcrypt'
 
 export default class UserController {
     find(req, res) {
-        const user_id = req.query.user_id
+        const user_link = req.query.user_link
 
         UserModal
-            .findById(user_id, '-password -confirmed_hash')
+            .findOne({link: user_link}, '-password -confirmed_hash')
             .populate('avatar background_photo')
             .exec((err, user) => {
                 if (err || !user) {
@@ -74,7 +74,6 @@ export default class UserController {
                 }
 
                 if (PostData.new_password && PostData.old_password) {
-
                     if (bcrypt.compareSync(PostData.old_password, data.password)) {
                         data.password = PostData.new_password;
                     } else {
