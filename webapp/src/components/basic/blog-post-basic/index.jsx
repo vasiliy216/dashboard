@@ -12,8 +12,6 @@ const BlogPostBasic = props => {
         schedule,
         image,
         user,
-        // status,
-        // visibility,
         title,
         text,
         PopUpWindow,
