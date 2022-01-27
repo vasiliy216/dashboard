@@ -12,6 +12,8 @@ const io = CreateSocket(http);
 
 import './core/db.js'
 
+app.use(express.static("../webapp/build"));
+
 CreateRoutes(app, io)
 
 http.listen(process.env.PORT, () => {
