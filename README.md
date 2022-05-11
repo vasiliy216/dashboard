@@ -12,4 +12,3 @@ front: '../webapp' `npm start`
 
 server: '../server' `npm run server`
 
-Примеры front-end части нахоятся в папке `webapp/src/assets`
